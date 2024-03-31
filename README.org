@@ -2,13 +2,13 @@
 #+DATE: <2023-08-22 Tue>
 #+LANGUAGE: en
 #+DESCRIPTION: Creating an artificial, open-ended universe from scratch.
-#+KEYWORDS: computable universe, computational philosophy, alife, abstract universe, non-biological evolution, artificial life, dynamic systems, metaphysics
+#+KEYWORDS: computable universe, computational philosophy, metaphysics, abstract universe, evolutionary computation, artificial life, alife, dynamic systems
 
-* What is This Place?
+** What is This Place?
 
-The Protoverse is a computational experiment with the intent to instantiate an abstract universe by computational means -- nested substrates where intrinsic, open-ended evolutionary processes are the consequential outcome of systemic interactions.
+The Protoverse is a computational experiment with the intent to build an abstract, artificial universe – nested substrates where intrinsic, open-ended evolutionary processes are the consequential outcome of systemic interactions.
 
-* Core Ideas
+** Core Ideas
 
 - The Protoverse is not made from things (like particles or objects and such), but processes. It represents a shift from a substantial-materialist worldview to a process-relational understanding. Here, properties emerge from relationships rather than existing inherently /(Process Philosophy, Relationalism)/.
 
@@ -16,6 +16,6 @@ The Protoverse is a computational experiment with the intent to instantiate an a
 
 - The presence of self-replicating entities (akin to what's commonly considered "life") is not a prerequisite for darwin-style evolution to occur. Evolutionary dynamics are self-initiating and self-sustainging loops (akin to a "virtuous cycles"), functioning not only beyond biological scales, but also generating nested scales of complexity trough the evolution of the capacity to evolve itself. /(Universal Darwinism, Evolution of Evolvability)/.
 
-* Project Status
+** Project Status
 
 I'm currently developing the metaphysical framework, in which I explore and try to connect these ideas (and several other related ones). I will publish the WIP metaphysics [[https://monkeyjunglejuice.github.io][on my blog]] soon.
