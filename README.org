@@ -1,21 +1,65 @@
-#+TITLE: The Protoverse Project
+#+TITLE: The Confluxus Project
 #+DATE: <2023-08-22 Tue>
 #+LANGUAGE: en
 #+DESCRIPTION: Creating an artificial, open-ended universe from scratch.
-#+KEYWORDS: computable universe, computational philosophy, metaphysics, abstract universe, evolutionary computation, artificial life, alife, dynamic systems
+#+KEYWORDS: computable universe, computational philosophy, metaphysics, abstract universe, evolutionary computation, artificial life, alife, complex systems
 
-** What is This Place?
 
-The Protoverse is a computational experiment with the intent to build an abstract, artificial universe – nested substrates where intrinsic, open-ended evolutionary processes are the consequential outcome of systemic interactions.
+* What is This Place?
+
+*Well, what is it /not/ about?*
+- It's not a goal to simulate physical phenomena or quantum mechanics
+- This won't be a simulation of our universe with celestial bodies
+- It has nothing to do with "metaverse"-style virtual reality
+
+The Confluxus is a computational experiment with the intent to build an open-ended artificial universe bottom-up (for those who believe that we live in a simulation, then this would be the simulation within the simulation ...).
 
 ** Core Ideas
 
-- The Protoverse is not made from things (like particles or objects and such), but processes. It represents a shift from a substantial-materialist worldview to a process-relational understanding. Here, properties emerge from relationships rather than existing inherently /(Process Philosophy, Relationalism)/.
+- The Confluxus is not made from things (like particles or objects and such), but Processes. It represents a shift from a substantial-materialist worldview to a process-relational understanding (e.g. properties emerge from relationships rather than existing inherently).
+/Keywords: Process Philosophy, Relationalism, Constructivism/
 
-- There's no traditional concept of time, space or gravity. Processes compose into higher-order Processes by continuously becoming their own nested computing substrates, giving rise to novel, emergent characteristics. This model also transcends classical dichotomies like "concrete/abstract", "mind/matter", etc. /(Backdrop Independence, Dynamic Systems)/.
+- There's no traditional pre-conception of environment, time, space or gravity. Processes co-evolve into higher-order Processes by continuously becoming their own nested computing substrates. This model also transcends classical dichotomies like "concrete/abstract", "mind/matter", etc.
+/Keywords: Backdrop Independence, Complex Systems, Computational Universe/
 
-- The presence of self-replicating entities (akin to what's commonly considered "life") is not a prerequisite for darwin-style evolution to occur. Evolutionary dynamics are self-initiating and self-sustainging loops (akin to a "virtuous cycles"), functioning not only beyond biological scales, but also generating nested scales of complexity trough the evolution of the capacity to evolve itself. /(Universal Darwinism, Evolution of Evolvability)/.
+- No fixed rules: the Confluxus aims to be an open-end multiscale model, where evolutionary dynamics create Nested Scales of Complexity with emergent, novel rules and dynamics, while maintaining inter-scale connectivity.
+/Keywords: Pluralism, Universal Darwinism, Multilevel Selection, Evolution of Evolvability/
 
-** Project Status
+* Project Status
 
-I'm currently developing the metaphysical framework, in which I explore and try to connect these ideas (and several other related ones). I will publish the WIP metaphysics [[https://monkeyjunglejuice.github.io][on my blog]] soon.
+I'm currently developing the metaphysical framework, in which I explore and try to connect these ideas (and several other related ones). I'm going to publish the WIP metaphysics soon [[https://monkeyjunglejuice.github.io][on my blog]].
+
+* FAQ
+
+** What is it Good for? How Can it be Applied?
+
+I don't know yet (that's what I consider a fun project). The work on the Confluxus could bring up some new perspectives and picture certain theories in a new light; maybe deeper insights into the nature of real-world systems and phenomena, from social systems to the origin of life, reality and the universe itself.
+
+** Why?
+
+I came to realize that I should do the kind of stuff I'm most curious about. There are quite a bit more "whys" than just my personal motivation -- but those are legion. Hence I rather would like to encourage you to answer the question yourself, when the metaphysical framework is online.
+
+** If it is Not Based on Physics, Then What?
+
+Well, I think that the laws of physics, time and space are not fundamental, but emergent dynamics. The physical scales themselves -- so my best guess -- might itself be nested within others. Consequently, I lean towards a backdrop-independent, pluralistic approach.
+
+The Confluxus project doesn't subscribe to a specific realm of study, but intersects computational philosophy with evolution theory, automata theory, complex systems, chaos theory, quantum mechanics, and others.
+
+The Confluxus is supposed to be purely abstract, which doesn't mean that it's crazy exotic or totally absurd (well, not yet; you might even find the modest ontology quite boring).
+
+** But isn't That Speculative? Not Science?
+
+You are right, the project is not science, but rather an expedition or a field trip.
+Speculation is fun and a type of intellectual creativity, while creativity involves and requires speculative thinking. It has its place in the ongoing feedback loop and is intrinsic to philosophical, mathematical and scientific methods, which should lead to the realization of the Confluxus by means of engineering.
+
+** How do You Fund That?
+
+The Confluxus project will at any time receive the attention it deserves and the degree of resoureces needed.
+
+1. The first rule of the Confluxus is: You do not talk about the Confluxus.
+2. The second rule of the Confluxus is: You do not talk about the Confluxus.
+3. Third rule: Rules are subject to evolution and lead to higher-order, emergent phenomena.
+
+** Don't You Have Ethical Concerns?
+
+The ethical guidelines are in the making, too.
