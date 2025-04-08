@@ -27,15 +27,8 @@ protoverse-*.tar
 
 # Language server files
 /.elixir_ls/
-
-# Temporary files, for example, from tests.
 /tmp/
-
-# Secrets
 /config/*.secret.exs
-
-# OS-specific files
 .DS_Store
-
-# Aider
 .aider*
+/.projectile-cache.eld
