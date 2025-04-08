@@ -10,6 +10,7 @@ defmodule Protoverse.Application do
     children = [
       # Starts a worker by calling: Protoverse.Worker.start_link(arg)
       # {Protoverse.Worker, arg}
+      {Task, fn -> Protoverse.run() end}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
