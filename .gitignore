@@ -36,3 +36,6 @@ protoverse-*.tar
 
 # OS-specific files
 .DS_Store
+
+# Aider
+.aider*
