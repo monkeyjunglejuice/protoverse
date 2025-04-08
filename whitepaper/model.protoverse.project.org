@@ -1,0 +1,49 @@
+# Created 2025-03-30 Sun 10:14
+#+options: 
+#+title: Modeling The Computational Universe
+#+date: <2024-09-27 Fri>
+#+author: Dan Dee
+#+email: MonkeyJungleJuice@pm.me
+#+subtitle: Protoverse: Computational Model
+#+language: en
+#+description: Creating a synthetic universe from scratch
+#+keywords: philosophical modeling, computational metaphysics, computational philosophy, process philosophy, artificial universe
+#+html_head_extra: <link rel="canonical" href="https://monkeyjunglejuice.github.io/blog/model.protoverse.project.html">
+#+setupfile: ../static/setup.org
+#+property: header-args+ :eval no-export
+#+begin_nav
+This is part of the Protoverse project:
+- [[file:introduction.protoverse.project.org][Introduction]]
+- [[file:metaphysics.protoverse.project.org][Metaphysics]]
+- [[file:engineering.protoverse.project.org][Technical Considerations]]
+- [[file:resources.protoverse.project.org][Resources]]
+- *[[file:model.protoverse.project.org][Computational Model]]*
+- [[file:ethics.protoverse.project.org][Ethical Guidelines]]
+#+end_nav
+
+#+begin_message
+NOT STARTED YET -- I'm going to work on the model after the metaphysical framework is done. If you would like to ponder ideas, I'll be glad for your input. You will find the [[https://github.com/monkeyjunglejuice/protoverse][source code on Github]]
+#+end_message
+
+#+toc: headlines 3
+* The Process Abstraction
+
+/This is about [[file:metaphysics.protoverse.project.org][Process (metaphysics]]); not to confuse with process or thread (computation)./
+
+The Process abstracion is prior, and it's the only truly scale-invariant principle. Processes do not exist /within/ an environment or within space or time -- instead, the relational dynamics of processes bring about perceived structures and dimensions, as they continuously /become/ their environment, actively co-creating (resp. co-evolving) the substrate they are operating in.
+** Interaction Dynamics
+
+*** Ideas for the Initial Epistemological Scope of Primitive Processes
+
+As Processes evolve and emerge higher-order Processes, it's reasonable to assume that the interactions could become more complex, transcending this initial scope. Some crude ideas:
+**** 1. Idea: Lexical Scope and Black Boxes
+There are no isolated Processes ("closed systems"), but a Process =P= cannot fully access the state of an arbitrary Process =Q= it interacts with. The arbitrary Process =Q= can initially only be understood in terms of a blackbox and successively modelling thereof, and interacted with according to the interfaces the Process =Q= exposes. Interfaces may adapt through ongoing interaction.
+
+The interaction =P ∧ Q= leads to an aggregate Processes (higher-order Process) =PQ=.
+
+This interaction between both might also create or alter sub-Processes =Px= and =Qx= within the boundaries of =P'= and =Q'=. The sub-processes =P'.X= and =Q'.X= can be fully accessed only by their respective super-Processes, while they cannot fully access the state of their super-Processes =P'= and =Q'= (same as the initial situation); hence =P.X= and =Q.X= need to reseort to black box analysis. While doing so, they have to create an inner model =P.X.Y= and =Q.X.Y=, and that would lead to an infinite regress, but not if each inner, newly spawned sub-Process is always a primitive Process.
+
+However, it is unclear yet how far the access to newly initiated sub-Processes =P.X= reaches, and under what circumstances, and if or to which extent the super-Process =P'= gradually loose access to these newly emerged child Processes, e.g. =P.X=, =P.X.Z=, etc.
+
+Maybe the access decays, the more interactions the evolved Processes =P'= and =Q'= experience (more relations piling up in their interaction logs) without further involvement of the child Processes =Xn=? Also, access from parent Processes to child Process may decay the more independent interactions the child Processes experience; the "further away" they get?
+**** 2. Idea:

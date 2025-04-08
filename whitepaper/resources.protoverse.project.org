@@ -1,0 +1,101 @@
+# Created 2025-03-30 Sun 10:14
+#+options: 
+#+title: Relevant Books, Papers and Articles
+#+date: <2024-09-11 Wed>
+#+author: Dan Dee
+#+email: MonkeyJungleJuice@pm.me
+#+subtitle: Protoverse: Resources
+#+language: en
+#+description: Creating a synthetic universe from scratch
+#+keywords: books, literature, metaphysics, process philosophy, alife, artificial universe, universal darwinism, natural selection, emergence, complex systems, chaos theory
+#+html_head_extra: <link rel="canonical" href="https://monkeyjunglejuice.github.io/blog/resources.protoverse.project.html">
+#+setupfile: ../static/setup.org
+#+property: header-args+ :eval no-export
+#+begin_nav
+This is part of the Protoverse project:
+- [[file:introduction.protoverse.project.org][Introduction]]
+- [[file:metaphysics.protoverse.project.org][Metaphysics]]
+- [[file:engineering.protoverse.project.org][Technical Considerations]]
+- *[[file:resources.protoverse.project.org][Resources]]*
+- [[file:model.protoverse.project.org][Computational Model]]
+- [[file:ethics.protoverse.project.org][Ethical Guidelines]]
+#+end_nav
+
+#+begin_message
+This list is currently in the making and not exhaustive.
+#+end_message
+
+#+toc: headlines 2
+* Philosophy / Metaphysics
+
+#+begin_index
+- Darwin's Dangerous Idea (Daniel Dennet): I agree with Dennett's view on the algorithmic nature of evolutionary processes. The significance of Darwin's discovery, which he pictures as "Universal Acid," occurred to me long ago and eventually led me to Universal Darwinism. While Dennett explores evolutionary processes on biological and cultural scales, my primary interest lies in the spectrum from the quantum scale to the transition to life.
+
+- Process and Reality (Alfred North Whitehead): This metaphysical system reads almost like a specification, so that I considered to model Actual Occasions in OCaml. I've got some objections though, so that I'm certain that I wouldn't adopt this system directly, but rather use it as a repository to reconcile my ideas.
+
+- A Key to Whitehead's Process and Reality (Donald W. Sherburne): An attempt to present the content of "Process and Reality" in a linear fashion -- but for me, the elimination of redundancy and repetition prevents the contextual comprehension and understanding the "whys" of various aspects, hence I actually prefer the web-like and chaotic structure of the original.
+
+- Whitehead Word Book (John B. Cobb jr.): Really nice glossary, great for a quick read in between.
+
+- Quantum Mechanics And The Philosophy Of Alfred North Whitehead (Michael Epperson): I think I should consider reading this later.
+
+- Difference and Repetition (Gilles Deleuze): I've been thinking deeply about what's behind various phenomena, and it boils down to change, difference, equality and identity. Successive research brought up this book and I'm thrilled that I found a kindred spirit who shares my conclusions and actually wrote a whole book about that. Unfortunately I find it incredibly verbose, largely unintellible and I really need to fight through it (I've got the English translation, since I don't understand French).
+
+- Germinal Life (Keith Ansell Pearson): "[To] illumnate the character of Deleuze's philosophy [...] in the context of bio-philosophy"; maybe as an intro or follow-up read.
+
+- Gödel, Escher, Bach (Douglas R. Hofstadter): Poetic contemplation of formal systems, strange loops and recursion. Even though I'm fond of Escher's artworks, counting Gödel's incompleteness theorems as one of my "roman empires". Even though I'm somehow intriqued by Bach's compositions, I lack the musical education to appreciate it, and I don't enjoy the dialogues at all. Not a quick read to breeze through either.
+
+- I Am A Strange Loop (Douglas R. Hofstader): Views on the self-referential structure of consciousness. Not started yet; maybe read later or instead of GEB.
+#+end_index
+* Computer Science / Modeling
+
+#+begin_index
+- [[https://people.idsia.ch/~juergen/computeruniverse.html][Computable Universes & Algorithmic Theory of Everything]] ([[https://en.wikipedia.org/wiki/Jürgen_Schmidhuber][Jürgen Schmidhuber]])
+  - A Computable Universe ([[https://people.idsia.ch/~juergen/fastestuniverse.pdf][preprint PDF]], [[https://www.worldscientific.com/worldscibooks/10.1142/8306#t=aboutBook][book]])
+  - [[https://people.idsia.ch/~juergen/toes.pdf][Algorithmic Theories of Everything]] (PDF)
+  - [[https://sferics.idsia.ch/pub/juergen/everything.pdf][A Computer Scientist's View of Life, the Universe and Everything]] (PDF)
+
+- [[https://sferics.idsia.ch/pub/juergen/zuserechnenderraum.pdf][Calculating Space]] (Konrad Zuse): The Classic on automata theory and the computational universe.
+
+- [[https://www.amazon.com/Communicating-Mobile-Systems-Robin-Milner/dp/0521658691][Communicating and Mobile Systems: The π-Calculus]] (Robin Milner): π-Calculus is basically a process algebra that might be inspiring for modeling the Protoverse Process dynamics (practical alternatives: Join Calculus and Actor Model).
+
+- [[https://groups.seas.harvard.edu/courses/cs252/2016fa/13.pdf][The Chemical Abstract Machines (CHAM): Solutions to Model Concurrency]] (Lily Tsai):  Join-Calculus goes beyond π-Calculus, depicting computations as "reactions", which aligns in principle with how I think about interacting Protoverse Processes of various orders. Curiosity: the "brownian motion" (mixing in order to provoke reactions).
+
+- [[https://web.math.princeton.edu/~weinan/papers/weinan_book.pdf][Principles of Multiscale Modeling]] (Weinan E): Text on multiscale modeling.
+
+- [[http://dx.doi.org/10.1590/0100-6045.2019.V42N3.BW][Computer Simulations In Metaphysics: Possibilities And Limitations]] (Billy Wheeler): Basically advocating for metaphysicians to make use computational models (can't agree more); a glance over several modeling techniques, e.g. agent-based modeling; comes with an example too.
+
+- A new Kind of Science (Stephen Wolfram): This illustrative book was a major inspiration that encouraged me to eventually take action and build something.
+#+end_index
+* Co-Evolution
+
+#+begin_index
+- [[https://ieeexplore.ieee.org/document/8454482][A Survey on Cooperative Co-Evolutionary Algorithms]]
+
+- [[https://link.springer.com/referenceworkentry/10.1007/978-3-540-92910-9_31][Coevolutionary Principles]] (Handbook of Natural Computing)
+#+end_index
+* Theoretical/Quantum Physics
+
+#+begin_index
+- Reality Is Not What It Seems (Carlo Rovelli): I've got interested in Relational Quantum Mechanics (one of various interpretations) and Loop Quantum Gravity, because both correspond to the process-relational worldview and the Protoverse framework. I've read it to develop a bit of an intuition for both theories.
+
+- The Order of Time (Carlo Rovelli): Enertaining book about how various overlapping concepts of time are at play simultaneously, from entropy to perceptional.
+
+- [[https://heyredhat.github.io/refs/wheeler_law_without_law.pdf][Law Without Law]] (John Archibald Wheeler): A case for a participatory universe and emergent dynamic laws instead of pre-determined laws of physics -- one that supports my cornerstone assumptions for the Protoverse model of dynamically evolving rules. The essay is part of "Quantum Theory And Measurement".
+
+- Our Mathematical Universe (Max Tegmark): Totally agree on his views on infinity (that's how I found out about Tegmark in the first place), and also find the idea of a pluralistic, nested hierarchy of increasing diversity and different rules interesting. His hypothesis is commonly considered radical Platonist (on a first glance), but I think that's not neccessarily the case. It've read the book a couple of years ago, probably I should read it again, and the papers as well.
+#+end_index
+* Complex Adaptive Systems
+
+- Chaos (James Gleick): Strangely attracting, enertaining pop-sci introduction to Chaos Theory.
+
+#+begin_index
+- [[https://repository.ubn.ru.nl/bitstream/handle/2066/82605/82605.pdf?sequence=1][The Operator Hierarchy]] (Gerard Jagers op Akkerhuis): I found that one because it seems to be quite similar to "Nested Scales Of Complexity", the idea of an abstract multi-scale framework that I'm exploring, in order to illustrate the integration of process-relational dynamics with Universal Darwinism. Further research on Jagers op Akkerhuis' work shows that his interest and views correspond with mine, which is exciting. [[https://theoperatortheory.info][Binge-worthy website]], and it seems like he has already done a some of the stuff that I want to do.
+#+end_index
+* Textbooks
+
+#+begin_index
+- Seven Sketches in Compositionality (Brendan Fong, David I. Spivak): My attempt to get into category theory. This is supposedly a gentle introduction; still in the 1st chapter. Ain't got time for that right now.
+
+- Genetic Algorithms in Elixir (Sean Moriarity): Hands-on programming textbook on how to utilize Elixir, which I plan to use [[file:artificial-universe-engineering.project.org][for prototyping]].
+#+end_index

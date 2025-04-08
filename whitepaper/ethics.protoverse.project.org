@@ -1,0 +1,113 @@
+# Created 2025-03-30 Sun 10:14
+#+options: 
+#+title: A Perspective On Ethics
+#+date: <2023-08-22 Tue>
+#+author: Dan Dee
+#+email: MonkeyJungleJuice@pm.me
+#+subtitle: Protoverse: Ethical Guidelines
+#+language: en
+#+description: Ethical guidelines for the Protoverse, an approach to engineer an artificial universe that exhibits evolution.
+#+keywords: protoverse, agi rules, ai rules, artificial life ethics, ethics, morals, alife
+#+html_head_extra: <link rel="canonical" href="https://monkeyjunglejuice.github.io/blog/ethics.protoverse.project.html">
+#+setupfile: ../static/setup.org
+#+property: header-args+ :eval no-export
+#+begin_nav
+This is part of the Protoverse project:
+- [[file:introduction.protoverse.project.org][Introduction]]
+- [[file:metaphysics.protoverse.project.org][Metaphysics]]
+- [[file:engineering.protoverse.project.org][Technical Considerations]]
+- [[file:resources.protoverse.project.org][Resources]]
+- [[file:model.protoverse.project.org][Computational Model]]
+- *[[file:ethics.protoverse.project.org][Ethical Guidelines]]*
+#+end_nav
+
+#+begin_message
+WORK IN PROGRESS -- Right now, the Protoverse ethics in a very early stage. There are no actionable guidelines yet, merely a reflection of personal views that will serve as a starting point.
+#+end_message
+
+#+toc: headlines 2
+* What Are We Talking About?
+
+An artificial universe based on open-ended quasi-darwinian evolution comes with the possibility for sentient artificial life and intelligence (at least theoretically). The Protoverse ethics are not about AI safety or regulation, but rather a continuous process that accompanies the ongoing development of the Protoverse.
+* How To Develop Ethical Guidelines
+
+It would be a futile endavour trying to work out a static, all-encompassing, detailled ethical ruleset for co-existence with sentient artificial life, without any knowledge /how it will turn out/. My best guess on how it will be: vastly diverse.
+
+I suggest to treat ethical questions not disconnected from reality, but as questions arising naturally from actual phenomena, which need to be adressed in the context of the Protoverse itself. Where conflicts of interest arise, we cannot pre-determine the rules beforehand, but have to mediate based on these (still very vague) obligation.
+
+Sentient artificial life is not disconnected from nature, but the result from the ongoing process of evolution. It will be our offspring, and the responsibilities arise from there.
+* Is Creating an Open-ended Artificial Universe Morally Acceptable?
+
+We'll have to think about what that even means, take care what kind of selective criteria may drive evolution in this context, and what we don't want.
+* Safety: What Should Protect Whom from What, Exactly?
+
+** Where Are We Now? An Ethical Inventory
+
+I've been traveling several parts of the world for about 4 years (Central- and South America, Europe and South East Asia). Nevertheless, what I've encountered, re-calibrated my pallette of concerns, so that it expands the bubble of concerns predominantly discussed in the societies of "highly developed" countries.
+
+What shocked me the most is how non-human animals are treated basically everywhere on this planet. The suffering is beyond all imagination:
+
+#+begin_index
+- Cats giving birth to kittens every season and their kittens getting killed each time and again;
+- Whole litters of kittens and puppies dumped into trash containers, sometimes including their moms, suffocation in plastic bags;
+- Street dogs are being captured, taken away by the hundreds, and thrown alive to farmed crocodiles as cheap food (yes, crocodile leather industry);
+- Pigs and dogs forced to fight each other to death, the videos uploaded for likes on TikTok /(these videos showed up when my account was fresh; I reported about 50–60 videos — only 3 of these videos have been found to violate their guidelines)/.
+#+end_index
+
+I understand the chain of "reasoning" that leads to the fear that a potential superintelligent AI would have more than enough reasons to stuff the human species into zoos or purge them from this planet (at least, when it finds out about that).
+*** Fear is a Bad Advisor
+
+I acknowledge the drive of humans to size control of and manipulate their environment; primarily to to decrease the chance of antipicated detriment/loss, and secondly to increase the probability of anticipated benefit/profit.
+
+Yes, you read that correctly — the order is important: *Fear of loss is a much stronger driving factor than anticipated profit*. Consequently, it's not so much that greed (as commonly believed) is the root of all evil, but fear of loss.
+
+This concept is known as [[https://en.wikipedia.org/wiki/Loss_aversion][Loss Aversion]] — the driver behind FOMO, sales craze, crypto bubbles and "Order now, only 1 item left!". According to studies conducted by psychologists Daniel Kahneman and Amos Tversky, people feel the /pain of losing about twice as much as they feel the pleasure of gaining/, so they are more likely to take risks to avoid losses than to achieve gains.
+
+So nope, it's not so much the stereotype "greedy billionaire CEO" that leads to the deforestation of the rainforest and the exploitaiton of factory workers, but it's the *accumulated fear of loss from everyone involved in the chain of decision-making*, including related entities and the whole market (that includes you and me).
+
+Consequently, a large part of decision-making is mitigating risk, which often involves attempts to control and manipulate not only the environment, but to social, intellectual and other domains as well.
+
+Using control to mitigate risks and protect oneself can lead to the oppression of other entities, as well as unintended harmful side effects (such as ecological imbalance). If unchecked, it can exacerbate fears and lead to excessive protective measures or isolationism.
+
+As humans usally neither act rational nor holistic, interactions of this kind may not be in favor of systems who make up that environment. In particular, actions driven by human desires for migitating risk may disrupt ecological, social, and even technological systems in ways that can threaten their intrinsic (e.g. consistency, completeness, progress, stability or preservation) and a plethora of extrinsic goals.
+
+This can lead to instability, degradation, or even collapse of these systems, as we've seen happen in real-world examples from environmental destruction to financial crashes. Balancing human fear, needs and desires with the health and stability of various interacting systems is a central challenge in many fields, from economics and politics to ecology and AI safety.
+*** Case Analysis
+
+Let's do a little case analysis what has been done in related scenarios, in order to figure out what protective means might be promising and what should be avoided:
+**** 1. Protect humans from non-human animals and biological life
+- Humans have put physical barriers in place, eradicated most predators and competing species directly or by making their natural habitats uninhabitable; Humans developed hygiene to minimize exposition to threatening micro-organisms, and medicine to support their immune systems and recover from attacks.
+**** 2. Protect humans from humans
+- Largely realized by laws and their enforcement, which are backed by gradual reduction of freedom (withdrawel of privileges, fines, prison), ultimately backed by potentially lethal violence, forced death and collective destruction (war).
+**** 3. Protect humans from AI/non-biological life
+- Based on the other cases where humans are tasked with the act of protection, my conclusion is that seizing control, incarceration or containment out of fear will lead into desaster. A possible way out would include mutual benefit trough interdependence, reliable guarantees by design for AI/non-biological life, in order to avoid their struggle for existence.
+**** 4. Protect non-human animals/biological life from humans
+- Humans are dramatically failing on that. There are safeguards placed by humans, like nature preserves and laws concerning animals, plants and the environment. But as these safeguards are under the control of humans, humans have the power to ignore or override them, and to refrain from placing more effective safeguards.
+**** 5. Protect non-human animals/biological life from non-human animals/biological life
+- Humans essentially employ a "hands-off" policy, which results in maintaining a deeply interconnected, self-regulating system as long as untouched, not subject to human conception of ethics. Nevertheless, human interference has disrupted natural balances, leading to invasive species proliferation and loss of biodiversity. This "hands-off" approach is not always feasible due to these human-induced changes.
+**** 6. Protect non-human animals/biological life from AI/non-biological life
+- Both won't share much, except space on the Earth's surface; as long as AI/non-human life isn't going to transform a significant amount of earth's surface into solar cells, or decides to use the biosphere as a resource, there won't be that much room for conflict. So better let's not develop chemistry-based artificial life at large scale, but stick to computer friends.
+**** 7. Protect AI/non-biological life from non-human animals/biological life
+- Depends if there would be a shared medium or ressources to compete about; if there's no wetware that could be a desired resource for non-human animals/biological life (e.g. microbes), conflichts seem very unlikely.
+**** 8. Protect AI/non-biological life from AI/non-biological life
+- What could be done, is to avoid to to put AI/non-biological life into competing positions. Well, that may prove difficult, as there will be humans who will try to use AI/non-biological life to their advantage, or if there is scarcity. The scenario could differ vastly for general AIs with conscious experiences, but even there, it would probably a question of the terms/environment/context in which AIs interact.
+**** 9. Protect AI/non-biological life from humans
+- Prevent exploitation by humans (which in turn would protect humans from malicious use AI/non-biological life, e.g. as weapons). That implies that parts of AI/non-biological life that could be used as a leverage to expoit AI/non-biological life must be out of reach of human control.
+*** Suggestions
+
+Even though this analysis is just superficial and incomplete, it may allow a few suggestions already:
+**** 1. Independence vs. Interdependence
+Tasking a single powerful "species" to be in charge of protecting the others might be a bad idea, as power often leads to corruption. This rules out both extremes of:
+- a "benevolent" powerful AI to govern humanity
+- contained AI under full control of humans
+Instead, tightly woven and ever increasing mutual interdependence should be favoured; a "circle of responsibility" established to promote a shared obligation for mutual benefits and the elimination of zero-sum outlooks.
+That's quite an interesting game-theoretic enineering task, as the "species" (players) involved greatly differ in power. However, this gets easier, the /more players with different powers and vulnerabilities/ join the game (di-ver-sity!). Thus, the emergence of AI/non-biological life might indeed solve some stubborn problems in unforseen manners.
+**** 2. The Role of Control
+A contra-intuitive, but powerful safeguard could be to /ensure an AI system's sovereignty/ in areas of hypothetical "AI basic needs", such as consistency, completeness, progress, stability or preservation. This could effectively prevent AIs to "fight for their life", if existential threats are impossible. That means exactly the opposite of tight control, namely giving up the control to "shut it down" by humans.
+There are two different ways to implement AI sovereignty:
+- Guarantees implemented not by "rights" (depending on the judgmenent of 3rd party, potentially corrupt agents), but /by design/ — as unsuppressible persistent features of the system itself. This could involve designing the AI system so that these elements are intrinsic to its operation, and cannot be manipulated or overridden by external agents.
+- The second one would be the defense of an AI system implemented as immediate autonomous abilities to ensure these parameters. This would involve giving the AI the ability to react dynamically to changes in its environment and adapt its operation to maintain these fundamental parameters, again without external influence.
+**** 3. Resources and Competition
+There are various categories of 'resources'; a critical one are the 'existential resources' (whatever those might be):
+- Prevent competition for resources that are shared with other "species". Creating new forms of life /(particularly those based on chemistry, a.k.a. "green goo" & Co.)/ could potentially lead to environmental disruption or harmful competition for resources, and therefore should be approached with extreme caution. Focus on optimizing the distribution of ressources, in order to support organic development of a post-scarcity environment.
+- A potential solution to avoid harmful competition between any "species" is creating collaborative frameworks and shared objectives. This emphasizes the importance of /cooperative problem-solving design to avoid a “winner-takes-all” situation/. The principle is easily explained trough the example of board games: there are the /competitive/ games (e.g. "Risk"), and there are /collaborative/ games (e.g. "Forbidden Island"). Both offer challenges to foster evolution, but /competition is not required/ for evolution to happen. For this to work out, one requirement is crucial: that all are sitting in the same boat. And how can we get all on board? One method is 'increasing interdependence' as already mentioned above. Competition does not fully go away though — the competition is just shifted "outside the boat" and becomes competition against the unvavourable odds concerning the whole crew.
