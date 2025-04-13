@@ -10,9 +10,9 @@ I'm currently developing the metaphysics. Right now, It's pretty much just a tra
 
 * Whitepaper
 
-[[file:whitepaper/introduction.protoverse.project.org][Introduction]]
-[[file:whitepaper/metaphysics.protoverse.project.org][Metaphysics]]
-[[file:whitepaper/engineering.protoverse.project.org][Technical Considerations]]
-[[file:whitepaper/model.protoverse.project.org][Computational Model]]
-[[file:whitepaper/resources.protoverse.project.org][Resources]]
-[[file:whitepaper/ethics.protoverse.project.org][Ethical Guidelines]]
+- [[file:whitepaper/introduction.protoverse.project.org][Introduction]]
+- [[file:whitepaper/metaphysics.protoverse.project.org][Metaphysics]]
+- [[file:whitepaper/engineering.protoverse.project.org][Technical Considerations]]
+- [[file:whitepaper/model.protoverse.project.org][Computational Model]]
+- [[file:whitepaper/resources.protoverse.project.org][Resources]]
+- [[file:whitepaper/ethics.protoverse.project.org][Ethical Guidelines]]
