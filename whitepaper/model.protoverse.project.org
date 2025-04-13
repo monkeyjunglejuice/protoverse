@@ -1,4 +1,4 @@
-# Created 2025-03-30 Sun 10:14
+# Created 2025-04-12 Sat 11:37
 #+options: 
 #+title: Modeling The Computational Universe
 #+date: <2024-09-27 Fri>
