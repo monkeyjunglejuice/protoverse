@@ -1,4 +1,4 @@
-# Created 2025-04-12 Sat 11:37
+# Created 2025-04-13 Sun 13:18
 #+options: 
 #+title: Modeling The Computational Universe
 #+date: <2024-09-27 Fri>
@@ -47,3 +47,4 @@ However, it is unclear yet how far the access to newly initiated sub-Processes =
 
 Maybe the access decays, the more interactions the evolved Processes =P'= and =Q'= experience (more relations piling up in their interaction logs) without further involvement of the child Processes =Xn=? Also, access from parent Processes to child Process may decay the more independent interactions the child Processes experience; the "further away" they get?
 **** 2. Idea:
+.....
