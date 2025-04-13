@@ -6,7 +6,7 @@
 
 * Project Status
 
-I'm currently developing the metaphysics. Right now, It's pretty much just a train of thought, where I explore and try to connect various ideas. Eventually, the metaphysics should serve as a informal, high-level blueprint to develop the computational model.
+I'm currently developing the metaphysics, which pretty much just a train of thought at this point, where I explore and try to connect various ideas. Eventually, the metaphysics should serve as a informal, high-level blueprint to develop the computational model.
 
 * Whitepaper
 
