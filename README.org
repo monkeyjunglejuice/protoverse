@@ -2,12 +2,10 @@
 #+DATE: <2023-08-22 Tue>
 #+LANGUAGE: en
 #+DESCRIPTION: Creating an artificial, open-ended universe from scratch.
-#+KEYWORDS: computable universe, computational philosophy, metaphysics, abstract universe, evolutionary computation, artificial life, alife, complex systems
+#+KEYWORDS: open-ended evolution, computational philosophy, metaphysics, abstract universe, evolutionary computation, artificial life, alife, complex systems
 
 * Project Status
 
-I'm currently developing the metaphysics, which pretty much just a train of thought at this point, where I explore and try to connect various ideas. Eventually, the metaphysics should serve as a informal, high-level blueprint to develop the computational model.
+There's no code yet. I'm currently developing the metaphysics, where I explore and try to connect various ideas. Eventually, the metaphysics should serve as a informal, high-level blueprint to develop the computational model.
 
-* Whitepaper
-
-/Don't read these documents on Github, because Github's rendering of Org files is rudimentary and there's a lot of content missing./
+→ [[https://monkeyjunglejuice.github.io/blog/introduction.protoverse.project.html][Read the whitepaper on my blog]]

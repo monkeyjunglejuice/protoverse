@@ -1,5 +1,5 @@
 #+title: Don't read these documents on Github
 
- Github's rendering of Org files is rudimentary and there's a lot of content missing.
+ Github's rendering of Org files is rudimentary and there's a lot of content missing, notably text within custom Org blocks.
 
- [[https://monkeyjunglejuice.github.io/blog/introduction.protoverse.project.html][Read the whitepaper on my blog instead]]
+ [[https://monkeyjunglejuice.github.io/blog/introduction.protoverse.project.html][Read the Protoverse whitepaper on my blog instead]]
