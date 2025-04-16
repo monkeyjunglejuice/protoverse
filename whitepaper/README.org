@@ -1,0 +1,5 @@
+#+title: Don't read these documents on Github
+
+ Github's rendering of Org files is rudimentary and there's a lot of content missing.
+
+ [[https://monkeyjunglejuice.github.io/blog/introduction.protoverse.project.html][Read the whitepaper on my blog instead]]

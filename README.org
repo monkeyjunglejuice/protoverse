@@ -10,9 +10,4 @@ I'm currently developing the metaphysics, which pretty much just a train of thou
 
 * Whitepaper
 
-- [[file:whitepaper/introduction.protoverse.project.org][Introduction]]
-- [[file:whitepaper/metaphysics.protoverse.project.org][Metaphysics]]
-- [[file:whitepaper/engineering.protoverse.project.org][Technical Considerations]]
-- [[file:whitepaper/resources.protoverse.project.org][Resources]]
-- [[file:whitepaper/model.protoverse.project.org][Computational Model]]
-- [[file:whitepaper/ethics.protoverse.project.org][Ethical Guidelines]]
+/Don't read these documents on Github, because Github's rendering of Org files is rudimentary and there's a lot of content missing./
