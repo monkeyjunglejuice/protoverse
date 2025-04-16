@@ -1,4 +1,4 @@
-# Created 2025-03-30 Sun 10:14
+# Created 2025-04-14 Mon 19:37
 #+options: 
 #+title: Relevant Books, Papers and Articles
 #+date: <2024-09-11 Wed>
@@ -59,7 +59,7 @@ This list is currently in the making and not exhaustive.
 
 - [[https://www.amazon.com/Communicating-Mobile-Systems-Robin-Milner/dp/0521658691][Communicating and Mobile Systems: The π-Calculus]] (Robin Milner): π-Calculus is basically a process algebra that might be inspiring for modeling the Protoverse Process dynamics (practical alternatives: Join Calculus and Actor Model).
 
-- [[https://groups.seas.harvard.edu/courses/cs252/2016fa/13.pdf][The Chemical Abstract Machines (CHAM): Solutions to Model Concurrency]] (Lily Tsai):  Join-Calculus goes beyond π-Calculus, depicting computations as "reactions", which aligns in principle with how I think about interacting Protoverse Processes of various orders. Curiosity: the "brownian motion" (mixing in order to provoke reactions).
+- [[https://groups.seas.harvard.edu/courses/cs252/2016fa/13.pdf][The Chemical Abstract Machines (CHAM): Solutions to Model Concurrency]] (Lily Tsai): Join-Calculus goes beyond π-Calculus, depicting computations as "reactions", which aligns in principle with how I think about interacting Protoverse Processes of various orders. Curiosity: the "brownian motion" (mixing in order to provoke reactions).
 
 - [[https://web.math.princeton.edu/~weinan/papers/weinan_book.pdf][Principles of Multiscale Modeling]] (Weinan E): Text on multiscale modeling.
 
@@ -97,5 +97,5 @@ This list is currently in the making and not exhaustive.
 #+begin_index
 - Seven Sketches in Compositionality (Brendan Fong, David I. Spivak): My attempt to get into category theory. This is supposedly a gentle introduction; still in the 1st chapter. Ain't got time for that right now.
 
-- Genetic Algorithms in Elixir (Sean Moriarity): Hands-on programming textbook on how to utilize Elixir, which I plan to use [[file:artificial-universe-engineering.project.org][for prototyping]].
+- Genetic Algorithms in Elixir (Sean Moriarity): Hands-on programming textbook on how to utilize Elixir, which I plan to use [[file:engineering.protoverse.project.org][for prototyping]].
 #+end_index

@@ -1,4 +1,4 @@
-# Created 2025-04-13 Sun 10:25
+# Created 2025-04-15 Tue 22:55
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -123,7 +123,7 @@ However, we could implement something resembling π-calculus or Join-calculus by
 
 The Proptoverses model's focus is on relational dynamics, recursive algorithms (e.g. manipulation of nested hypergraphs) to model potentially infinite Nested Scales of Complexity. Protoverse dynamics are supposed to be largely irregular and highly interconnected, therefore not strictly hierarchical.
 
-This seems to align well with [[https://en.wikipedia.org/wiki/Task_parallelism][task parallelism]] rather than [[https://en.wikipedia.org/wiki/Data_parallelism][data parallelism]]. However, data parallelism is more more widespread in use today and generally more efficient (e.g. SIMD). Hence it's worth considering if parts of the dynamics could be computed in a data-parallel approach, e.g. vectorization.
+This seems to align well with [[https://en.wikipedia.org/wiki/Task_parallelism][task parallelism]] rather than [[https://en.wikipedia.org/wiki/Data_parallelism][data parallelism]]. However, data parallelism is more more widespread in use today and generally more efficient (e.g. SIMD). Hence it's worth considering if parts of the dynamics could be computed in a data-parallel approach.
 
 Generally speaking, encapsulation and locality are good indicators for how effectively computations can be parallelized. What strategies in regard to parallelization deal specifically well with deeply nested structures/dynamics?
 
@@ -132,7 +132,7 @@ Generally speaking, encapsulation and locality are good indicators for how effec
   - Apply data-parallel techniques on subcomponents of the problem where data can be processed uniformly;
 - Recursive tasks can sometimes be decomposed into smaller problems where data parallelism can be exploited, especially if parts of the computation manifest regular patterns or repeated operations.
 
-In any case, it makes sense to have straightforward GPU computing available (OpenCL or CUDA) if needed.
+In any case, it makes sense to have straightforward GPU computing readily available (OpenCL or CUDA) if needed.
 ** Recursion Support
 
 "Never send a human to do a machine's job." ---Agent Smith about TCO.
@@ -167,8 +167,8 @@ We probably have to consider memory-saving techniques earlier in the development
 Clever resource-saving plays a larger role if he Protoverse would be a long-running application. There could be intrinsic selection (as a part of the Protoverse dynamics) that effectively prunes certain Nested Scales Of Complexity when it is highly probable that nothing interesting happens at these; e.g. when they turn out random and too boring and therefore "non-viable". On the other side -- even inconspicuous, boring dynamics can turn out to be further influential for evolution, and the extent may be unforeseeable.
 ** Portability
 
-Unforseen complications may likely require to switch certain parts of the implementation during development, e.g. the runtime. It would make sense to write the model in a language that could be ported without much effort. The first what comes to mind are C, C++ and JavaScript. But these are eitber very low-level or ugly, and I'm pretty sure I wouldn't come very far with these as a modeling language. There are two aspects:
-1. Use a high-level language that compiles to either a low-level language or can target multiple backends. Examples: [[https://gambitscheme.org/][Gambit Scheme]] -> C, [[https://nim-lang.org/][NIM]] -> C, ... and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
+Unforseen complications may likely require to switch certain parts of the implementation during development, e.g. the runtime. It would make sense to write the model in a language that could be ported without too much effort. The first what comes to mind are C and C++. But these are very low-level or and ugly, and I'm pretty sure I wouldn't come very far with these as a modeling language. There are two aspects:
+1. Use a high-level language that compiles to either a low-level language or can target multiple backends; for instance, there are many Scheme dialects that target various platforms, and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
 2. Adher to portable code, that means following a standard (e.g. R6RS for the Scheme language).
 ** Scalability
 
@@ -178,7 +178,7 @@ First and foremost, the prevalent status will be "under development"; and increa
 - Long-running: The Protoverse as a continuously running application could benefit from a horizontal, distributed scaling model. Permanent access to the hardware infrastructure is required.
 *** Distributed Computing
 
-Since I anticipate the Protoverse rather as a forever-running application than a batch computation (open-ended quasi-darwinian evolution), I lean towards a distributed, horizontal scaling model with redundant nodes that runs in the cloud, and eventually might even run on commodity hardware (e.g. a heterogenous peer-to-peer network), much like Ethereum or Bitcoin.
+Since I anticipate the Protoverse rather as a forever-running application than a batch computation (open-ended quasi-darwinian evolution), I lean towards a distributed, horizontal scaling model with redundant nodes that runs in the cloud, and eventually might even run on commodity hardware (e.g. a heterogenous peer-to-peer network), much like BOINC, or even like Ethereum or Bitcoin.
 ** Collaboration Opportunities
 
 - Computer Science: process algebras, artificial life
@@ -191,24 +191,26 @@ Since I anticipate the Protoverse rather as a forever-running application than a
 * Programming Environment and Language
 
 The following assessment is about choosing the primary platform/language for modeling and implementation. There are gradual pros/cons which are rather tricky to gauge at this point, not knowing in advance what requirements will turn out more or less important over the course of the project; and there are absolute dealbreakers too.
-** Erlang Platform (BEAM)
+** Conventional Programming Languages and Platforms
 
-- Hot code reloading: support for upgrading a running application; but it's [[https://learnyousomeerlang.com/relups#the-hiccups-of-appups-and-relups][hellish complicated]]; so it seems that it can't be leveraged for interactive development (preserving state is the goal), and further it does not to compare to Common Lisp's redefining functions and classes within a running system;
+*** Erlang Platform (BEAM)
+
+- Hot code reloading: support for upgrading a running application; but it's [[https://learnyousomeerlang.com/relups#the-hiccups-of-appups-and-relups][hellish complicated]]; so it seems that it can't be leveraged for interactive development (preserving rather than re-creating state is the goal), and further it does not to compare to Common Lisp's redefining functions and classes within a running system;
 - Erlang projects must be written by adhering to the OTP framework in order to enable hot code reloading;
 - Erlang doesn't provide the same grade of tight-looped interactivity as Common Lisp;
 - Erlang has built-in observability ([[https://www.erlang.org/doc/system/profiling.html#large-systems][profilers and analysis tools]]);
 - Recursion is idiomatic: dynamically growing stack depth, no stack overflows;
 - Each lightweight Erlang process has it's own stack, heap and garbage collection, no global "stop-the-world";
 - Responsive under heavy load, fault tolerance facilities;
-- Passing around a lot (or large) messages is inefficient, because shared-nothing message passing involves copying that data;
-- Hence the need for massive, high-frequency interactions will still be a challenge (there's no such thing as linar scaling);
-- Is said to be slow for CPU-heavy stuff (maybe a matter of concern), however CPU-heavy code could be written as a NIF, e.g. in Rust;
+- Reduced DevOps mess, a plethora of infrastructure tools can be avoided;
 - Concurrency primitives readily available; actor model implementation;
 - Ad-hoc parallelism: concurrently executing code is pre-emptively scheduled and will be distributed automatically to all available cores;
 - Ad-hoc distributed computing built-in; however distributed Erlang isn't suitable for connecting nodes over the internet in a plug-and-play fashion, because there are no security facilities at all. So it's best used only to connect nodes within an isolated cluster.
-- Paractical cluster size up to ~150 nodes, larger clusters possible with hierarchical clustering and other trickery (see also theoretical [[https://www.erlang.org/doc/system/system_limits.html][system limits]])
-- Reduced DevOps mess, a plethora of infrastructure tools can be avoided;
-*** Erlang
+- Passing around a lot (or large) messages is inefficient, because shared-nothing message passing involves copying that data;
+- Is said to be slow for CPU-heavy stuff (probably a matter of concern), however CPU-heavy code could be written as a NIF, e.g. in Rust;
+- Paractical cluster size up to ~150 nodes, larger clusters possible with hierarchical clustering and other trickery (see also theoretical [[https://www.erlang.org/doc/system/system_limits.html][system limits]]);
+- Hence the need for massive (several billions) of high-frequency interacting computations will be a challenge still, and even a huge BEAM cluster with say 500 nodes wouldn't be up to a system like this (there's no such thing as linar scaling);
+**** Erlang the language
 
 - Simple, functional actor-oriented language with pervasive pattern matching;
 - Advantages over Elixir/LFE:
@@ -223,7 +225,7 @@ The following assessment is about choosing the primary platform/language for mod
 - Collab opportunities: Engaged community, focus on infrastructure, industrial-engineering-mindset;
 
 Sentiment: Erlang has no Lisp-style macros, but I think I will need them. And there are some rocks on the road to flowy interactive, explorative programming.
-*** Elixir the language
+**** Elixir the language
 
 - Functional actor-oriented language with pervasive pattern matching;
 - Advantages over Erlang/LFE
@@ -235,14 +237,14 @@ Sentiment: Erlang has no Lisp-style macros, but I think I will need them. And th
   - Gradual type system in the making;
 - Opinionated and inconsistent language design (mostly syntax), way too much special cases and gotchas for a modern high-level language;
 - Steeper learning curve than Erlang or LFE;
-- Makes extensive use of metaprogramming (hygienc macros, compile-time only), although it looks quite awkward, implicit and verbose compared to Lisp;
+- Makes extensive use of metaprogramming (hygienc macros, compile-time only), although it looks quite awkward and verbose compared to Lisp;
 - Lazy streams;
-- No ADTs yet, which would be great for modeling;
+- No ADTs, which would be great for modeling;
 - Most 3rd-party documentation and howtos are related to the Phoenix web framework and web development;
-- Collab opportunities: Community and ecosystem centered around web backend and boring CRUD business apps; building stuff outside of this domain is slooowly taking off (e.g. machine learning);
+- Collab opportunities: Community and ecosystem centered around web backend and business apps; building stuff outside of this domain is slooowly taking off (e.g. machine learning);
 
 Sentiment: I find Elxir rather inconsistent, verbose and a bit clumsy -- syntax-wise, mostly. There are quite a lot WTFs, but Elixir is more interactive-friendly and has at least compile-time macros.
-*** LFE (Lisp Flavored Erlang)
+**** LFE (Lisp Flavored Erlang)
 
 - Simple actor-oriented Lisp with pervasive pattern matching;
 - Advantages over Elixir/Erlang:
@@ -260,33 +262,34 @@ Sentiment: I find Elxir rather inconsistent, verbose and a bit clumsy -- syntax-
 - Collab opportunities: intersection of Lisp/Erlang afficinados (very tiny), far lower momentum than Elixir or Gleam;
 
 Sentiment: Lisp on the BEAM would be an interesting match if LFE wasn't just a 2-person hobby project.
-** Guile Scheme
+*** Guile Scheme
 
 - Clean, highly general, expressive;
+- Astonishingly "general purporse" for an extension language;
 - Schene is great for prototyping abstractions and algorithms;
 - Full metaprogramming (syntax-rules, syntax-case, defmacro);
 - Capable for [[https://en.wikipedia.org/wiki/Metalinguistic_abstraction][metalinguistig abstraction]] (see also [[https://en.wikipedia.org/wiki/Language-oriented_programming][LOP]]);
 - Good for interactive development (Emacs with Geiser);
-- Relies on guix for package management (MacOS unsupported) or homebrew;
+- Relies on Guix for package management (MacOS unsupported) or homebrew;
 - There's a tiny library ecosystem;
 - JIT compiler;
-- [[https://www.gnu.org/software/guile/manual/guile.html#Stack-Overflow-1][Unlimited stack depth for Scheme code]], TCO;
-- Concurrency and multicore [[https://github.com/wingo/fibers/wiki/Manual#13-parallelism][parallelism]] via [[https://github.com/wingo/fibers][fibers]] ([[https://github.com/wingo/fibers/wiki/Manual][manual]]), preemptive scheduler;
+- [[https://www.gnu.org/software/guile/manual/guile.html#Stack-Overflow-1][Unlimited stack depth for Scheme code]], TCO available;
+- Concurrency and multicore [[https://github.com/wingo/fibers/wiki/Manual#13-parallelism][parallelism]] via [[https://github.com/wingo/fibers][fibers]] ([[https://github.com/wingo/fibers/wiki/Manual][manual]]), Concurrent ML / CSP style, preemptive scheduler;
 - Distributed: [[https://spritely.institute/goblins/][Goblins]] actor-framework in the making ([[https://spritely.institute/files/docs/guile-goblins/0.14.0/index.html][docs]]), for P2P;
-- Overall performance for CPU-heavy tasks worse than Gerbil's (?);
-- Collab opportunities: Scheme enthusiasts, academic;
+- Overall performance for CPU-heavy tasks is unclear right now;
+- Collab opportunities: GNU and Scheme enthusiasts, academic;
 
-Sentiment: Due to the Fibers library and its scheduler, Guile is quite interesting; but I have no idea how its concurrency capability compares to Erlang, for instance.
-** Racket
+Sentiment: Due to the Fibers library and its scheduler, Guile is quite interesting; but I have no idea how it compares to Erlang, for instance.
+*** Racket
 - Clean, higly general and expressive;
 - Racket is great for prototyping abstractions and algorithms;
 - Full metaprogramming (syntax-rules, syntax-case, defmacro);
 - Built for [[https://en.wikipedia.org/wiki/Metalinguistic_abstraction][metalinguistig abstraction]] (see also [[https://en.wikipedia.org/wiki/Language-oriented_programming][LOP]]);
 - Not bad for interactive development (Emacs with Racket-mode);
 - Various concurrency facilities;
-- Racket lacks in Parallelism: [[https://docs.racket-lang.org/guide/parallelism.html][Places]] is rather hands-on, fully manual;
+- Racket lacks in Parallelism: [[https://docs.racket-lang.org/guide/parallelism.html][Places]] looks quite awkward and hands-on, fully manual;
 - Distributed: has a [[https://git.syndicate-lang.org/syndicate-lang/syndicate-rkt/src/branch/main/syndicate][Syndicated Actors]] implementation and a [[https://docs.racket-lang.org/goblins/][Spritely Goblins]] implementation that's behind the canonical one; both are experimental.
-** Gambit / Gerbil Scheme
+*** Gambit / Gerbil Scheme
 
 - "Distributed" actor-model centric Scheme implementation based on Ganbit Scheme
 - Clean, higly general, expressive;
@@ -299,12 +302,12 @@ Sentiment: Due to the Fibers library and its scheduler, Guile is quite interesti
 - Multiprocessor-parallelism (SMP) [[https://github.com/mighty-gerbils/gerbil/issues/837][not working yet]], depends on Gambit Scheme implementation;
 - Built-in concurrency (actor model) based on light-weight Gambit threads;
 - Ad-hoc distributed computing with [[https://cons.io/tutorials/ensemble.html][actor ensembles]];
-- Compiles to C, overall performance on CPU-heavy tasks better than Guile's;
+- Compiles to C, overall performance on CPU-heavy tasks probably better than Guile's;
 - Small documentation, but gives a well-rounded overview;
 - Collab opportunities: Scheme enthusiasts, academic;
 
-Sentiment: Gerbil Scheme is a promising project but in a very early stage (v18.0), and doesn't support multiple cores. The Emacs integration isn't comparable to Guile's, e.g. documentation or code autocompletion.
-** Julia
+Sentiment: Gerbil Scheme is a promising project but in a very early stage (v18.0), and doesn't support multiple CPU cores. The Emacs integration isn't comparable to Guile's, e.g. documentation or code autocompletion.
+*** Julia
 
 - The only conventional imperative language considered so far;
 - Pattern matching and other niceties are available via [[https://github.com/thautwarm/MLStyle.jl][MLStyle.jl]] library;
@@ -313,15 +316,15 @@ Sentiment: Gerbil Scheme is a promising project but in a very early stage (v18.0
 - Metaprogramming is available and used extensively, looks less awkward than Elixir's approach;
 - A running program can be debugged and modified, new functions can be defined and added (with caveats; not extensively as in Common Lisp);
 - Dynamic typing, but allows type annotations (mostly for performance reasons); [[https://thautwarm.github.io/MLStyle.jl/latest/preview.html#generalized-algebraic-data-types][Algebraic Data Types via MLStyle.jl]]
-- Parallel and distributed computing out-of-the-box (cluster-oriented);
+- Parallel and distributed computing out-of-the-box (cluster-oriented), but it seems not very high-level;
 - Shiny convenience libraries for all kinds of scientific stuff, visualization and plotting;
 - Direct calling of C functions and access to Python libraries;
 - Has native access to GPU computing (CUDA only);
 - Low-level access to the language itself;
 - Collab opportunities: data-, science and simulation folks of all sorts;
 
-Sentiment: Julia would be an interesting choice and checks many boxes, also because of its library ecosystem centered around scientific computing – if it wasn't totally ignorant about recursion.
-** OCaml
+Sentiment: Julia is an interesting choice and checks many boxes, also because of its library ecosystem and its focus on scientific computing – but Julia is totally ignorant about recursion.
+*** OCaml
 
 - Functional language with pervasive pattern matching, elegant and very readable syntax;
 - There has been a [[https://www.ocamlwiki.com/wiki/Join_calculus][process calculus]] implemented in OCaml, but abandoned;
@@ -333,11 +336,11 @@ Sentiment: Julia would be an interesting choice and checks many boxes, also beca
 - [[http://ocamlverse.net/content/parallelism.html#domain-thread-based-parallelism][Parallelism since 5.0]] using domainslib;
 - No ad-hoc distributed computing;
 - Overall performant, super fast compiler;
-- Messy workflow (dune), there's always something that stops working;
+- Messy tooling and workflow -- there's always a new surprise tbat something stopped working;
 - Colaboration opportunities: engaged community, language ecosystem under active development, FP-pragmatics;
 
-Sentiment: It's my favorite language actually, but my experience with the messy tooling and the fact there's no real interactivity seems to be the dealbreaker. Static typing is wonderful when you work a lot with 3rd-party libraries, you just look at the tyupes and plug it together. But probably not the right tool for this job.
-** Haskell
+Sentiment: It's my favorite language actually, but the tooling (Opam, Dune build system, Ocaml REPL and Utop REPL) is such a horrible mess. Well and there's no real interactivity anyway.
+*** Haskell
 
 - Functional language, expressive and low-noise, lovely syntax;
 - No support to modify a running program, only REPL (what about [[https://hackage.haskell.org/package/rapid][rapid]]?);
@@ -350,7 +353,7 @@ Sentiment: It's my favorite language actually, but my experience with the messy 
 - Collab opportunities: engaged community, FP-enthusiasts;
 
 Sentiment: I'm afraid of lazy-per-default, that reasoning about resource usage may become too complicated and a lot time is spent on fighting Haskell's opinions. Seems no great choice for explorative programming, except maybe you work basically on the type level.
-** NIM
+*** NIM
 - Multi-paradigm, expressive and low-noise;
 - There's a [[https://github.com/inim-repl/INim][REPL]] for interactive development;
 - Metaprogramming via templates and real compile-time macros;
@@ -365,7 +368,7 @@ Sentiment: I'm afraid of lazy-per-default, that reasoning about resource usage m
 - Has many interesting libraries, e.g. a [[https://github.com/mratsim/Synthesis][state-machine generator]];
 - The language seems kinda stable, but there are a lot of deprecations and even a rewrite of the compiler going on;
 - Collab opportunities: Even though the language doesn't draw a lot of attention, there's already a very diverse landscape of libraries and projects written in NIM, and attracts even academics.
-** JVM: Clojure
+*** JVM: Clojure
 
 - Functional paradigm, in principle a nice and clean take on Lisp;
 - Recursion support: no TCO, but acknowledged by loop/recur workaround due to JVM characteristics;
@@ -381,7 +384,7 @@ Sentiment: I'm afraid of lazy-per-default, that reasoning about resource usage m
 - Collab opportunities: rather business-oriented community and a few lispers;
 
 Sentiment: Dealing with the Java stuff and lingo is unpleasant yet unavoidable. Clojure is a functional language, but since it runs on the JVM, it doesn't offer the full spectrum of what makes a functional language, but employs workarounds instead. It resorts to Java interop for all kinds of (even basic) functionality, which is confusing.
-** Common Lisp (SBCL)
+*** Common Lisp (SBCL)
 
 - Supports functional programming and logic programming, anything goes but not everything goes well;
 - Covers a huge range of abstractions via libraries, e.g. pattern matching with trivia;
@@ -398,7 +401,10 @@ Sentiment: Dealing with the Java stuff and lingo is unpleasant yet unavoidable. 
 - Low-level access to the language itself, plenty of optimizations;
 - Collab opportunities: Community is diverse yet enthusiastic, fragmented, less collaborative (many one-person-projects rather than common goals realized);
 
-Sentiment: I'm afraid that Common Lisp could be a dead end when it comes to massive concurrency & parallelism: "[[https://www.reddit.com/r/lisp/comments/tw7zqr/what_is_a_feature_of_other_languages_that_you/][(..) high level parallelism in lisp just sucks]]". But it might be sensible to set up some benchmarks, (e.g. with Sento) before dismissing CL, because otherwise CL seems pretty nice for such a project.
+Sentiment: I'm afraid that Common Lisp could be a dead end when it comes to massive concurrency & parallelism: "[[https://www.reddit.com/r/lisp/comments/tw7zqr/what_is_a_feature_of_other_languages_that_you/][(..) high level parallelism in lisp just sucks]]". But it might be sensible to set up some benchmarks, (e.g. with Sento) before dismissing CL, because otherwise CL seems pretty nice for such a project -- at least for prototyping.
+** Specialized Programming Languages
+
+.....
 * Current Semi-Finalists
 
 ** Elixir vs. Guile Scheme:

@@ -1,4 +1,4 @@
-# Created 2025-03-30 Sun 10:14
+# Created 2025-04-16 Wed 10:29
 #+options: 
 #+title: Creating an Artificial Open-ended Universe Bottom-up
 #+date: <2023-08-22 Tue>
@@ -24,15 +24,19 @@ This is part of the Protoverse project:
 #+toc: nil
 * What is This Place?
 
-*Well, what is it /not/ about?*
+*Well, what is it not about?*
 - Has nothing to do with "metaverse"-style virtual reality
 - It's no simulation of quantum mechanics or physical phenomena
 - No simulation celestial bodies or galaxies
-- And it's no ALive simulation, either
+- And it's no ALife simulation, either
 
-The Protoverse is a computational experiment with the intent to build an open-ended artificial universe bottom-up. The Protoverse' design may resemble our universe in some aspects, but also deviate strongly in others -- I'm not interested in simulating real world phenomena, but the /integration/ of orthodox concepts, new ideas and even personal intuitions.
+The Protoverse is a computational experiment with the intent to build an open-ended artificial universe through an extreme bottom-up approach.
 
-The Protoverse is supposed to be purely abstract, which doesn't mean that it's crazy exotic or totally absurd (well, not yet; you might even find the modest ontology quite boring).
+My aim is to build multi-scale computational substrates where intrinsic, open-ended evolutionary processes are the consequential outcome of systemic interactions.
+
+The Protoverse is supposed to be purely abstract, which doesn't mean that it's crazy exotic or totally absurd (well, not yet). You might even find the modest ontology quite boring.
+
+The Protoverse' design may resemble our universe in some aspects, but also deviate strongly in others -- I'm not interested in simulating real world phenomena, but the /integration/ of orthodox concepts, new ideas and even personal intuitions.
 ** Core Ideas
 
 #+begin_index
@@ -46,6 +50,9 @@ The Protoverse is supposed to be purely abstract, which doesn't mean that it's c
 Please check out the [[file:metaphysics.protoverse.project.org][metaphysics]] for the intergration of these ideas.
 * FAQ
 
+** How Can it be Applied?
+
+I don't know yet (that's what I consider a fun project). I can imagine some modest applications, and some pretty wild ones too. But I don't care about that right now.
 ** Why are you doing this?
 
 I came to realize that I should do the stuff I'm most curious about. For me, open-ended computational evolution is probably the most interesting problem I can imagine, and I want to explore some ideas and intuitions.
@@ -55,9 +62,9 @@ The Protoverse project moves beyond physics because it views physical laws, spac
 
 The idea that a Theory of Everything (TOE) or Grand Unified Theory (GUT) can be derived from physics alone overlooks how emergent properties arise from complex interactions across various Scales. Integrated theories of complex adaptive systems, rather than purely physical theories, might offer more comprehensive insights.
 
-Consider the human brain: its functioning (what makes the brain a brain and not merely a lump of "matter" and "forces") is not about physical interactions, but higher-order: biological processes, cognitive phenomena, and emergent properties arising from complex networks. The brain represents a Nested Scale of Complexity, a higher-order substrate where novel rules and dynamics overlay the physical laws of underlying Scales, even though it's still entirely implemented in them.
+Consider the human brain: its functioning (what makes the brain a brain and not merely a lump of "matter" and "forces") is not about physical interactions, but higher-order: biological processes, cognitive phenomena, and emergent properties arising from complex networks. The brain is constituted by Nested Scale of Complexity, resulting in a higher-order substrate where novel rules and dynamics overlay the physical laws of underlying Scales, even though it's still entirely implemented in them.
 
-Thus, the Protoverse project has to transcend traditional disciplinary boundaries, integrating ideas from computational philosophy, evolutionary theory, process philosophy, automata theory, complex adaptive systems, chaos theory, quantum mechanics, and systems architecture with emphasis on concurrency and parallelism. This interdisciplinary approach acknowledges the richness of reality and its many Scales.
+Thus, the Protoverse project has to transcend traditional disciplinary boundaries, integrating ideas from computational philosophy, evolutionary theory, process philosophy, automata theory, complex adaptive systems, chaos theory, quantum theory, and systems architecture with emphasis on concurrency and massive parallelism. This interdisciplinary approach acknowledges the richness of reality and its many scales.
 ** So you're bashing physics? What is this, woo-woo?
 
 Nope, not at all. But to investigate it, we must zoom out and turn to philosophy. Well, philosophy is a black/white spaghetti mess full of misunderstandings (for that reason, I've always kept philosophy at arm's bay). However, most philosophical concepts or "schools" I've looked into, get /something/ right, but mess it up eventually, mostly by falling into these traps:
@@ -65,16 +72,16 @@ Nope, not at all. But to investigate it, we must zoom out and turn to philosophy
 -> rooted in the human condition and the /experience of the "ego"/
 -> can be identified as the origin of most problems in/with philosophy
 
-The human condition and experience tends to assign special status to this, privilege to that, and ultimately alway to itself in one way or the other:
+The human experience tends to assign special status to this, privilege to that, and ultimately alway to itself in one way or the other:
 - Either themed as "mind", "conscious agents" or similar, trying to conceal the self-centrism -- so much about idealism.
 - But realism (and materialism in particular) is merely the other side of the same coin; just taking the validity of human experience at bare value, claiming objectivity.
 
-Basically, both sides are analogous to the pointless discussion between "introvert" vs. "extrovert". My point is: no matter which one, both results in privileges and special status of certain concepts ("mind", "consciousness" / "particles", "space") who frantically seek to hide the validation of their ultimate justification in ... being a monkey.
+Basically, both sides are analogous to the pointless discussion between "introvert" vs. "extrovert" personality. My point is: no matter which one, both results in privileges and special status of certain concepts ("mind", "consciousness" / "particles", "space") who frantically seek to hide the validation of their ultimate justification in ... being a monkey.
 *** 2. Use of language (loaded vocabulary, entrenched preconceptions, imprecision, ambiguity)
 -> entrenchment hijacks attempts of developing novel thoughts
 -> provokes misunderstanding
 
-The (mis)use of natural language is not just an issue in philosophy of course, but in all disciplines. Within science, it revolves mostly on the excessive use of jargon: for instance, I'm having a hard time with physics jargon, while computer science jargon goes down easily, followed by biology jargon. But science, at least, tries to establish a common ground via math, though it creates its own barriers to understanding.
+The (mis)use of natural language is not just an issue in philosophy of course, but in all disciplines. Within science, it revolves mostly on the excessive use of jargon: for instance, I'm having a hard time with physics jargon, while computer science jargon goes down more easily, followed by biology jargon. But science, at least, tries to establish a common ground via math, though it creates its own barriers to understanding.
 
 Philosophical disciplines instead make excessive use of natural language, using ad-hoc (re)definitions. Even though there are exisiting formal logics (mostly related to analytical philosophy), nobody seems to use them.
 *** 3. Epistemic rigidity (stagnation in tradition, absolutism, radicalism, worshipping concepts/authorities)
@@ -84,11 +91,7 @@ Philosophical disciplines instead make excessive use of natural language, using 
 .....
 ** But isn't that mere speculation? Not science?
 
-You are right, the project is not science, but rather an expedition or field trip.
-Speculation has its place in the ongoing feedback loop and is intrinsic to philosophical, mathematical and scientific methods, which aims to realize the Protoverse by means of engineering.
-** How Can it be Applied?
-
-I don't know yet (that's what I consider a fun project). I can imagine some modest applications, and some pretty wild ones too. But I don't care about that right now.
+You are right, the project is not science, but rather an expedition or field trip. Speculation has its place in the ongoing feedback loop and is intrinsic to philosophical, mathematical and scientific methods, which aims to realize the Protoverse by means of engineering.
 ** How do you fund that?
 
 The Protoverse project will at any time receive the attention it deserves and the degree of resources needed.

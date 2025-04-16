@@ -1,4 +1,4 @@
-# Created 2025-03-30 Sun 10:14
+# Created 2025-04-14 Mon 19:37
 #+options: 
 #+title: No More Playing With "Building Blocks"
 #+date: <2023-08-22 Tue>
@@ -206,7 +206,7 @@ This uncertainty makes the entire system fundamentally non-deterministic. From t
 
 It further implies that there's would be no need to include explicit, bolted-on randomness in the Protoverse model. Redefining the meaning of /Equality/ itself would have to happen on the level of logic, and that also means a departure from /classical logic/.
 
-I don't know if it's neccessary or sensible  to augment (or even replace) classical logic in order to build this quantum-like, probablistic resp. non-deterministic system. There are /propability theory/ and the paradigms /propablistic programming/ and /non-deterministic programming/ (I'm entirely unfamiliar with both), and these seem to work without touching the underlying logic.
+I don't know if it's neccessary or sensible to augment (or even replace) classical logic in order to build this quantum-like, probablistic resp. non-deterministic system. There are /propability theory/ and the paradigms /propablistic programming/ and /non-deterministic programming/ (I'm entirely unfamiliar with both), and these seem to work without touching the underlying logic.
 
 However, it feels more intuitive to me (haha!) to operate on the logic level -- maybe it make sense to adopt /fuzzy logic/. And while we're at it, we could also ditch the "Law of the excluded middle"! I've always been suspicious of it and could never accept it.
 
@@ -279,7 +279,7 @@ A given system (which is a bunch of interrelated Processes) can be re-constructe
 - The interfaces (and therefore the possible interactions) of the system to be re-constructed;
 - That there cannot be two Processes absolutely equal;
 
-Re-constructing of a system of processes gives naturally rise to a new Nested Scale OF Complexity -- it's like if we develop and describe a model of something we've discovered in nature. For a model to be either regarded as "static" or "dynamic" is merely a matter of description.
+Re-constructing of a system of processes gives naturally rise to a new Nested Scale Of Complexity -- it's like if we develop and describe a model of something we've discovered in nature. For a model to be either regarded as "static" or "dynamic" is merely a matter of description.
 
 Such a new scale in turn becomes a fully legit part of reality, independent of (our made-up) "classic" categorizations such as "abstract" or "concrete", because these categories don't apply per se.
 * Navigating Uncertainty
@@ -332,8 +332,7 @@ Repetition applies selective criteria leading to change (predominantly increasin
 
 Preference is pervasive, arising through various criteria (Processes) that act as filters or enhancers. With Variety and interaction, selection is inevitable too.
 **** Retention
-Retention occurs when selective criteria preventing change are repeatedly applied.
-Retention stabilizes certain configurations, counteracting the system's tendency towards entropy. Retention does not merely preserve states but also organize and structure information.
+Retention occurs when selective criteria preventing change are repeatedly applied. Retention stabilizes certain configurations, counteracting the system's tendency towards entropy. Retention does not merely preserve states but also organize and structure information.
 
 Retention of information, a certain state, configuration or dynamism can happen through various mechanisms, that do not neccessarily have to qualify as self-replicators -- these are just evolved higher-order implementations of Retention. Self-replicators are catalysts that initiate a transition leading to a new Nested Scale of Complexity with emergent rules/dynamics and successive exploration of new possibilities.
 **** Meta-Evolution
