@@ -27,8 +27,13 @@ protoverse-*.tar
 
 # Language server files
 /.elixir_ls/
-/tmp/
+
+# Secrets
 /config/*.secret.exs
+
+# Misc
 .DS_Store
 .aider*
+/tmp/
 /.projectile-cache.eld
+/.vscode/
