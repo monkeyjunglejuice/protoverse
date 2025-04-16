@@ -8,4 +8,4 @@
 
 There's no code yet. I'm currently developing the metaphysics, where I explore and try to connect various ideas. Eventually, the metaphysics should serve as a informal, high-level blueprint to develop the computational model.
 
-→ [[https://monkeyjunglejuice.github.io/blog/introduction.protoverse.project.html][Read the whitepaper on my blog]]
+→ [[https://monkeyjunglejuice.github.io/blog/introduction.protoverse.project.html][Read the Protoverse whitepaper on my blog]]
