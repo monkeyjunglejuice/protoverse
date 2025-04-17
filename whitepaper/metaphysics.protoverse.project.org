@@ -1,4 +1,4 @@
-# Created 2025-04-16 Wed 19:09
+# Created 2025-04-17 Thu 11:38
 #+options: 
 #+title: No More Playing With "Building Blocks"
 #+date: <2023-08-22 Tue>
@@ -67,7 +67,7 @@ Of course that's not the whole story: Certainly, humans are developing tools and
 
 A whole "universe" has been created around the idea of objects in various manifestations, e.g. 'person', 'number' or 'particle', assuming that they must be somehow special, important or fundamental — just because they seem so /intuitive/ — "I think, therefore they are", no? Who in his right mind could deny that?
 
-But our theories might be much more contingent on human intuition than we usually admit. There are numerous hints, that we long ago entered territory where our intuitive concept of a substance-based reality is a hindrance, has lost it's use, or is falling apart entirely: when grappling with abstract concepts (like emotions, mathematics, software), emergent phenomena (like businesses or complex systems), and fields on the edge of human knowledge (such as neuroscience or quantum mechanics).
+But our theories might be much more contingent on human intuition than we usually admit. There are numerous hints, that we long ago entered territory where our intuitive concept of a substance-based reality is a hindrance, has lost it's use, or is falling apart entirely: when grappling with abstract concepts (like emotions, mathematics, software), emergent phenomena (like businesses or complex systems), and fields on the edge of human knowledge (such as neuroscience, quantum mechanics and consciousness).
 
 The nasty habit to objectify everything may cause us to miss important subtleties, so that there will be subtly growing gaps in our understanding of ever-changing complex systems, as long as we fail to /update our repertoire of intuitions/.
 
@@ -616,9 +616,9 @@ What we might find is that, taken these separate hypothetical theories, there ca
 - Physical laws and phenomena are not fundamental but emergent or evolved
 - There's no "imperfection" in nature, but complexity misunderstood
 - Desire for the absolute, closed, discrete, perfect, precise is a cognitive bias
-- The unfinished and infinite are not flaws, but the expression of becoming
+- The unfinished and infinite are not flaws, but potentials for becoming
 - Be careful with (ad-hoc) formal systems; they are tools, not truths
-- Mathematics: I lean towards formalism and constructivism
+- Mathematics: I lean towards constructivism
 - Potential infinity is legit; actual infinities are ok within certain formal systems, on equal footing as art
 - Equality is a human invention, rooted in bias and over-application of formal systems
 - Closed systems cannot exist

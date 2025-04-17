@@ -1,4 +1,4 @@
-# Created 2025-04-15 Tue 22:55
+# Created 2025-04-17 Thu 14:15
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -123,16 +123,14 @@ However, we could implement something resembling π-calculus or Join-calculus by
 
 The Proptoverses model's focus is on relational dynamics, recursive algorithms (e.g. manipulation of nested hypergraphs) to model potentially infinite Nested Scales of Complexity. Protoverse dynamics are supposed to be largely irregular and highly interconnected, therefore not strictly hierarchical.
 
-This seems to align well with [[https://en.wikipedia.org/wiki/Task_parallelism][task parallelism]] rather than [[https://en.wikipedia.org/wiki/Data_parallelism][data parallelism]]. However, data parallelism is more more widespread in use today and generally more efficient (e.g. SIMD). Hence it's worth considering if parts of the dynamics could be computed in a data-parallel approach.
+This seems to align well with [[https://en.wikipedia.org/wiki/Task_parallelism][task parallelism]] rather than [[https://en.wikipedia.org/wiki/Data_parallelism][data parallelism]]. However, due to "big data", data parallelism is more more widespread in use today and generally more efficient (e.g. SIMD). Hence it's worth considering if parts of the dynamics could be computed in a data-parallel approach.
 
-Generally speaking, encapsulation and locality are good indicators for how effectively computations can be parallelized. What strategies in regard to parallelization deal specifically well with deeply nested structures/dynamics?
+Generally speaking, encapsulation and locality are good indicators for how effectively computations can be parallelized. For deeply nested and interconnected structures, a hybrid approach might be beneficial.
+- Use task parallel techniques to manage the high-level structure and irregular tasks;
+- Apply data-parallel techniques on subcomponents of the problem where data can be processed uniformly;
+- Recursive tasks may be decomposed into smaller problems where data parallelism can be exploited, especially if parts of the computation manifest regular patterns or repeated operations;
 
-- For deeply nested and interconnected structures, a hybrid approach might be beneficial.
-  - Use task parallelism to manage the high-level structure and irregular tasks;
-  - Apply data-parallel techniques on subcomponents of the problem where data can be processed uniformly;
-- Recursive tasks can sometimes be decomposed into smaller problems where data parallelism can be exploited, especially if parts of the computation manifest regular patterns or repeated operations.
-
-In any case, it makes sense to have straightforward GPU computing readily available (OpenCL or CUDA) if needed.
+In any case, it makes sense to have straightforward GPU computing readily available (OpenCL, CUDA or HIP) if needed.
 ** Recursion Support
 
 "Never send a human to do a machine's job." ---Agent Smith about TCO.
@@ -334,12 +332,13 @@ Sentiment: Julia is an interesting choice and checks many boxes, also because of
 - No real macros but just template preprocessing of sorts, but it has a very powerful module system (which is something entirely different compared to module systems in other languages);
 - Concurrency: There's an early-stage actor library [[https://github.com/riot-ml/riot][Riot]] based on algebraic effects and effect handlers, OCaml's goto-concurrency [[https://ocaml.org/p/lwt/latest][Lwt]] implements promises instead;
 - [[http://ocamlverse.net/content/parallelism.html#domain-thread-based-parallelism][Parallelism since 5.0]] using domainslib;
-- No ad-hoc distributed computing;
+- No ad-hoc distributed computing
+- There's [[https://mirage.io/][Mirage OS]] that lets you compile your application directly into a full "micro operating system", it can be used to deploy nodes for a distributed system;
 - Overall performant, super fast compiler;
 - Messy tooling and workflow -- there's always a new surprise tbat something stopped working;
 - Colaboration opportunities: engaged community, language ecosystem under active development, FP-pragmatics;
 
-Sentiment: It's my favorite language actually, but the tooling (Opam, Dune build system, Ocaml REPL and Utop REPL) is such a horrible mess. Well and there's no real interactivity anyway.
+Sentiment: It's my favorite language actually, but the tooling (Opam, Dune build system, Ocaml REPL and Utop REPL) is such a mess. Well, and there's no real interactive development.
 *** Haskell
 
 - Functional language, expressive and low-noise, lovely syntax;
@@ -354,6 +353,7 @@ Sentiment: It's my favorite language actually, but the tooling (Opam, Dune build
 
 Sentiment: I'm afraid of lazy-per-default, that reasoning about resource usage may become too complicated and a lot time is spent on fighting Haskell's opinions. Seems no great choice for explorative programming, except maybe you work basically on the type level.
 *** NIM
+
 - Multi-paradigm, expressive and low-noise;
 - There's a [[https://github.com/inim-repl/INim][REPL]] for interactive development;
 - Metaprogramming via templates and real compile-time macros;
@@ -402,12 +402,58 @@ Sentiment: Dealing with the Java stuff and lingo is unpleasant yet unavoidable. 
 - Collab opportunities: Community is diverse yet enthusiastic, fragmented, less collaborative (many one-person-projects rather than common goals realized);
 
 Sentiment: I'm afraid that Common Lisp could be a dead end when it comes to massive concurrency & parallelism: "[[https://www.reddit.com/r/lisp/comments/tw7zqr/what_is_a_feature_of_other_languages_that_you/][(..) high level parallelism in lisp just sucks]]". But it might be sensible to set up some benchmarks, (e.g. with Sento) before dismissing CL, because otherwise CL seems pretty nice for such a project -- at least for prototyping.
-** Specialized Programming Languages
+** Specialized Programming Languages and Runtimes
 
-.....
-* Current Semi-Finalists
+While low-level languages like CUDA or OpenCL for GPU computing are well established, high-level languages for massive parallelism are a more recent invention:
+*** Bend
+- Two surface syntaxes: Python-style and ML-style;
+- High-level: higher-order functions, closures, unrestricted recursion, continuations;
+- Untyped language -- types seem to be mere documentation, ADT syntax sugar is there to define constructor functions (see [[https://github.com/HigherOrderCO/Bend/blob/main/FEATURES.md][features]]);
+- Aims to provide fully "transparent" parallelism, no manual managment of parallelization (no thread creation, locks, mutexes, etc.);
+- Compiler can generate massively parallel GPU kernels from high-level code;
+- Based on interaction nets ([[https://en.wikipedia.org/wiki/Interaction_nets][Wikipedia]], [[https://www.semanticscholar.org/paper/Interaction-Combinators-Lafont/6cfe09aa6e5da6ce98077b7a048cb1badd78cc76][paper]]);
+- Still experimenal/research state;
+- https://github.com/HigherOrderCO;
+- [[https://discourse.julialang.org/t/bend-a-new-gpu-native-language/114440/16][Discussion in Julia forum]];
+- Gained some traction, has good marketing;
+*** Cuneiform
+- Functional data flow language, main application field is large-scale data analysis;
+- Implemented in distributed Erlang;
+- Utilizes CPUs;
+- Is still a research project;
+- https://cuneiform-lang.org;
+*** Futhark
+- Simple, ML-style, purely functional;
+- "[[https://futhark-lang.org/blog/2022-04-04-futhark-is-a-low-level-language.html][Low-level]]" in certain regards;
+- Has a REPL, Emacs mode and language server;
+- Not meant as a general-purpose language, but to generate [[https://en.wikipedia.org/wiki/Compute_kernel][compute kernels]] used from other languages;
+- [[https://futhark-book.readthedocs.io/en/latest/language.html#sequential-loops][Doesn't support recursive functions]];
+- Statically typed;
+- Nested data-parallelism (array language);
+- Targets [[https://futhark-lang.org/blog/2024-07-17-opencl-cuda-hip.html][CUDA, OpenCL and HIP]];
+- Can compile to a Python module that internally uses PyOpenCL;
+- Can compile to C code and WASM;
+- [[https://github.com/zshipko/futhark-bindgen][Binding generator for OCaml]];
+- Still research project;
+- https://futhark-lang.org/;
+*** Chapel
+- Old-school object-oriented, not very high-level;
+- Task parallism, data parallism and nested parallelism;
+- Portable: orignially designed for Cray supercomputers and not with GPUs in mind, it is portable and runs on Laptops as well;
+- Supports GPU programming (NVIDIA and AMD);
+- What is Chapel: https://developer.hpe.com/platform/chapel/home/;
+** Conclusion
 
-** Elixir vs. Guile Scheme:
-Both embrace recursion. Guile Scheme would be interesting if it turns out performant enough in a highly concurrent/parallel setting.
-** Julia vs. Common Lisp
-Both are actually pretty similar in many regards; the bigger ecosystem gives Julia an edge, while Common Lisp supports conversational programming at the running program.
+The Protoverse project ventures into uncharted territories, and my gut feeling says that I should counterbalance that notion with adhering to mature, "industrial-grade" technology.
+
+I'm not expecting to plug libraries together (how most "software  engineering" is done today), but to go through a journey of discovery and exploration, and think through the whole process "from scratch" by myself. I am aware that I'll be "re-inventing the wheel" several times, which certainly will lead to inefficient, naive implementations (evolutionary algorithms are such a candidate, for instance).
+
+In such cases it will be desirable to draw from established algorithms/libraries, after I have developed an understanding beforehand.
+
+*The finalists:*
+
+1. The Erlang platform -- using the Elixir and/or the Erlang language -- might be not as performant for "raw computation", but supports the actor model at the language level and therefore makes it really convenient to write highly concurrent programs, which could be later ported to high-performance implementations if necessary;
+
+2. Julia, even though being an imperative language, offers much convenience and is backed by a substantial ecosystem focused on scientific computing;
+
+/What do you think?/
