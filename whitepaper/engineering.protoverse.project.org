@@ -1,4 +1,4 @@
-# Created 2025-04-17 Thu 14:15
+# Created 2025-04-17 Thu 15:28
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -444,16 +444,18 @@ While low-level languages like CUDA or OpenCL for GPU computing are well establi
 - What is Chapel: https://developer.hpe.com/platform/chapel/home/;
 ** Conclusion
 
-The Protoverse project ventures into uncharted territories, and my gut feeling says that I should counterbalance that notion with adhering to mature, "industrial-grade" technology.
+The Protoverse project ventures into uncharted territories, and my gut feeling says that I should counterbalance that notion with adhering to mature, "industrial-grade" technology where possible.
 
-I'm not expecting to plug libraries together (how most "software  engineering" is done today), but to go through a journey of discovery and exploration, and think through the whole process "from scratch" by myself. I am aware that I'll be "re-inventing the wheel" several times, which certainly will lead to inefficient, naive implementations (evolutionary algorithms are such a candidate, for instance).
+I'm not expecting to plug libraries together (how most "software  engineering" is done today), but to go through a journey of discovery and exploration, and to think through the whole process "from scratch", and the language should support that (it's pretty close to the paradigm embodied by the Scheme language).
 
-In such cases it will be desirable to draw from established algorithms/libraries, after I have developed an understanding beforehand.
+I am aware that I'll be "re-inventing the wheel" several times, which certainly will lead to inefficient, naive implementations (evolutionary algorithms are such a candidate, for instance). In such cases it will be desirable to draw from established algorithms/libraries, after I have developed an understanding beforehand.
 
-*The finalists:*
+Covering much ground quickly by focussing on the model and abstractions is crucial, therefore I want to work as high-level as possible, avoiding clutter in order to free mental capacity. Therefore I didn't really consider Rust for once, which is too low-level, utterly complicated and verbose (syntax matters); secondly I left out Python, which is far from elegant -- beauty matters, too (which doesn't mean that we should be excluded from using certain libraries associated with Python's ecosystem, such as [[https://github.com/nnaisense/evotorch][Evotorch]] or [[https://github.com/EMI-Group/evox][Evox]]).
 
-1. The Erlang platform -- using the Elixir and/or the Erlang language -- might be not as performant for "raw computation", but supports the actor model at the language level and therefore makes it really convenient to write highly concurrent programs, which could be later ported to high-performance implementations if necessary;
+*The Finalists*
 
-2. Julia, even though being an imperative language, offers much convenience and is backed by a substantial ecosystem focused on scientific computing;
+1. The Erlang platform, using either Elixir and/or Erlang as the language: It might be not as performant for "raw computation", but supports the actor model at the language level and therefore makes it astonishingly convenient to write highly concurrent (and parallel) programs -- which could be later ported to high-performance implementations if that's necessary.
+
+2. Julia, even though being an imperative language, is liberating because it offers a lot of convenience. It's also backed by a substantial ecosystem focused on scientific computing, the domain closely related.
 
 /What do you think?/
