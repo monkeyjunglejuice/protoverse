@@ -1,4 +1,4 @@
-# Created 2025-04-17 Thu 18:48
+# Created 2025-04-17 Thu 21:23
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -102,18 +102,14 @@ The help of a VM- or image-based runtime and language that allows to experiment 
 Since the interesting stuff is likely to happen the longer the Protoverse runs, the ability to step back and forth through the execution history might be desired, too (straightforward state-recreation, or actually circumventing the need for state recreation to begin with).
 ** Massively Interacting Computations
 
-A lot of stuff is going to happen in realtime. Eventually I'm expecting many billions of smallish, interacting computations. In the early stages, where the focus is on modeling the Process abstraction and dynamics, the capacity to handle a couple of millions might be enough, which should be achievable in the cloud, on a small Rasperry Pi cluster or even a bunch of laptops.
+A lot of stuff is going to happen in realtime. Eventually I'm expecting many billions of smallish, interacting computations. In the early stages, where the focus is on modelling the Process abstraction and dynamics, the capacity to handle a couple of millions might be enough, which should be achievable in the cloud, on a small Rasperry Pi cluster or even a bunch of laptops.
 
-Before we come to concurrency and parallelism, I would like to shed light on another perspective of both. They are often conflated, and understandably so -- because what we actually want is parallelism, and we could view concurrency as a simulation or imitation thereof.
+Before we come to concurrency and parallelism: the concepts are often mixed up, and understandably so. Parallelism is a special variant of concurrency (well, not exactly - here's a [[https://stackoverflow.com/a/24684037][comprehensive explanation]]), but it's the thing that we really want -- in terms of availability as well as problem decomposability.
 
-Concurrency only seemingly allows to do certain things simultaneously, while in reality means switching between (sub)tasks very quickly (analogy: one single clerk behind multiple counters, dealing with many queues of customers back-and-forth) -- You probably can imagine the overhead of context switching while doing so. Concurrency stages (schedules) tasks /in time/.
-
-Parallelism on the other hand means doing these (sub)tasks really at the same time (analogy: one, or even multiple clerks behind each counter). The problem with current architectures is, that parallelism isn't "soft-scalable", which means these cores ("clerks") have to be /physically/ there, and there can only be so many as have been planned before.
-
-So the ideal thing to have would be "soft-scalable" parallelism, that would make concurrency entirely redundant. Anyway, what do we have available right now?
+The problem with current architectures is, that parallelism is tied to the number of /physical/ cores available. The ideal thing to have would be something like "soft-scalable" parallel concurrency, but in practical terms with current architecture we need both, concurrency and parallelism.
 *** Concurrency
 
-Since massive concurrency is a basic need, this will practically rule out concurrency solely based on "heavyweight" threads scheduled by the OS kernel.
+Since /massive/ concurrency is a basic need, this will practically rule out concurrency solely based on "heavyweight" threads scheduled by the OS kernel.
 
 There are basically two facilities in common use that fit massive concurrency: Either [[https://en.wikipedia.org/wiki/Actor_model][actors]] or CSP-style channels ([[https://wingolog.org/archives/2016/10/12/an-incomplete-history-of-language-facilities-for-concurrency][breakdown here]]). My first idea was that the primitive Protoverse Processes and user-level threads are mapped one-to-one, where the user-level threads are scheduled by a runtime and multiplexed to OS-threads or processes. Here is to note that Protoverse Processes compose into higher-order Processes, which leads to and relies on relations (state) and communication between the underlying runtime threads.
 **** Actor Model vs. Process Calculi
