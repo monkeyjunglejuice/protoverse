@@ -1,4 +1,4 @@
-# Created 2025-04-18 Fri 18:31
+# Created 2025-04-18 Fri 19:51
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -430,12 +430,6 @@ While low-level languages like CUDA or OpenCL for GPU computing are well establi
 - https://github.com/HigherOrderCO;
 - [[https://discourse.julialang.org/t/bend-a-new-gpu-native-language/114440/16][Discussion in Julia forum]];
 - Gained some traction, has good marketing;
-*** Cuneiform
-- Functional data flow language, main application field is large-scale data analysis;
-- Implemented in distributed Erlang;
-- Utilizes CPUs;
-- Is still a research project;
-- https://cuneiform-lang.org;
 *** Futhark
 - Simple, ML-style, purely functional;
 - "[[https://futhark-lang.org/blog/2022-04-04-futhark-is-a-low-level-language.html][Low-level]]" in certain regards;
