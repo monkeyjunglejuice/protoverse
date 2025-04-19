@@ -1,4 +1,4 @@
-# Created 2025-04-18 Fri 19:51
+# Created 2025-04-19 Sat 10:59
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -187,17 +187,6 @@ First and foremost, the prevalent status will be "under development"; and increa
 *** Distributed Computing
 
 Since I anticipate the Protoverse rather as a forever-running application than a batch computation (open-ended quasi-darwinian evolution), I lean towards a distributed, horizontal scaling model with redundant nodes, that runs in the cloud, and eventually might even run on commodity hardware (e.g. a heterogenous peer-to-peer network): much like BOINC, or even like Ethereum or Bitcoin.
-** Collaboration Opportunities
-
-Obviously, I won't be able to do the whole project entirely myself. Collaboration with folks from several fields would be a good idea:
-
-- Computer Science: process algebras, artificial life
-- Complex Systems Theory: non-linear dynamics, adaptive systems, process theory
-- Theoretical Physics: loop quantum gravity, relational quantum mechanics
-- Biology: bioinformatics, evolutionary theory, computational biology
-- Math/Logic: formal logic, category theory, game theory
-- Systems Architecture: parallelism, distributed systems
-- Data science / machine learning: data analyzation, visualization
 * Programming Environment and Language
 
 The following assessment is about choosing the primary platform/language for modeling and implementation. There are gradual pros/cons which are rather tricky to gauge at this point, not knowing in advance what requirements will turn out more or less important over the course of the project; and there are absolute dealbreakers too.
@@ -459,8 +448,7 @@ I'm not expecting to plug libraries together (how most "software  engineering" i
 I am aware that I'll be "re-inventing the wheel" several times, which certainly will lead to inefficient, naive implementations (evolutionary algorithms are such a candidate, for instance). In such cases it will be desirable to draw from established algorithms/libraries, after I have developed an understanding beforehand.
 
 Covering much ground quickly by focussing on the model and abstractions is crucial, therefore I want to work as high-level as possible, avoiding clutter in order to free mental capacity. Therefore I didn't really consider Rust for once, which is too low-level, utterly complicated and verbose (syntax matters); secondly I left out Python, which is far from elegant -- beauty matters, too (which doesn't mean that we should be excluded from using certain libraries associated with Python's ecosystem, such as [[https://github.com/nnaisense/evotorch][Evotorch]] or [[https://github.com/EMI-Group/evox][Evox]]).
-
-*The Finalists*
+*** The Finalists
 
 I've picked two languages/platforms that are orthogonal:
 
