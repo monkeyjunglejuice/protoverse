@@ -1,4 +1,4 @@
-# Created 2025-04-14 Mon 19:37
+# Created 2025-04-20 Sun 13:27
 #+options: 
 #+title: Relevant Books, Papers and Articles
 #+date: <2024-09-11 Wed>
@@ -43,15 +43,17 @@ This list is currently in the making and not exhaustive.
 
 - Germinal Life (Keith Ansell Pearson): "[To] illumnate the character of Deleuze's philosophy [...] in the context of bio-philosophy"; maybe as an intro or follow-up read.
 
-- Gödel, Escher, Bach (Douglas R. Hofstadter): Poetic contemplation of formal systems, strange loops and recursion. Even though I'm fond of Escher's artworks, counting Gödel's incompleteness theorems as one of my "roman empires". Even though I'm somehow intriqued by Bach's compositions, I lack the musical education to appreciate it, and I don't enjoy the dialogues at all. Not a quick read to breeze through either.
+- Gödel, Escher, Bach (Douglas R. Hofstadter): Poetic contemplation of formal systems, strange loops and recursion. Even though I'm fond of Escher's artworks, counting Gödel's incompleteness theorems as one of my "roman empires" and are somehow intriqued by Bach's compositions, I lack the musical education to appreciate it, and I don't enjoy the dialogues at all. Not a quick read to breeze through either.
 
 - I Am A Strange Loop (Douglas R. Hofstader): Views on the self-referential structure of consciousness. Not started yet; maybe read later or instead of GEB.
 #+end_index
 * Computer Science / Modeling
 
 #+begin_index
+- [[https://worldscientific.com/worldscibooks/10.1142/8306#t=aboutBook][A Computable Universe: Understanding and Exploring Nature as Computation]] (Various authors, edited by Hector Zenil): Currently reading.
+
 - [[https://people.idsia.ch/~juergen/computeruniverse.html][Computable Universes & Algorithmic Theory of Everything]] ([[https://en.wikipedia.org/wiki/Jürgen_Schmidhuber][Jürgen Schmidhuber]])
-  - A Computable Universe ([[https://people.idsia.ch/~juergen/fastestuniverse.pdf][preprint PDF]], [[https://www.worldscientific.com/worldscibooks/10.1142/8306#t=aboutBook][book]])
+  - Chapter 20 of "A Computable Universe" ([[https://people.idsia.ch/~juergen/fastestuniverse.pdf][preprint PDF]])
   - [[https://people.idsia.ch/~juergen/toes.pdf][Algorithmic Theories of Everything]] (PDF)
   - [[https://sferics.idsia.ch/pub/juergen/everything.pdf][A Computer Scientist's View of Life, the Universe and Everything]] (PDF)
 
