@@ -1,4 +1,4 @@
-# Created 2025-04-21 Mon 15:54
+# Created 2025-04-21 Mon 17:33
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -152,6 +152,22 @@ Recursion will play a key role (evolutionary dynamics at multiple Nested Scales 
 However, it's generally possible to explicitly manage a separate stack as a heap-allocated data structure that collects the outcome of the recursive calls, instead of relying on the call stack, while the stack management logic could be hidden with helper macros, keeping the code clean and readable; or use continuation-passing-style (meh).
 
 While both workarounds are pragmatic, they come with a cognitive overhead and belong to the realms of optimization. Hence, it would be great to have an unlimited or dynamically managed call stack depth to prevent stack overflows, so that we could write recursive procedures in a naive style for convenience, specifically during prototyping.
+** Scalability
+
+Open-endedness is fundamentally about scaling.
+
+First and foremost, the Protoverse will undergo increasing counsumption of resources. Therefore relatively straightforward scaling should be baked-in from the very beginning. It depends on the principal modus operandi of the Protoverse which scaling model to prefer:
+
+- Batch-processing: This approach leans toward vertical scaling, throwing more powerful hardware on it, e.g. CPU/GPU arrays. This hardware wouldn't have to be available all the time.
+- Long-running: The Protoverse as a continuously running application could benefit from a horizontal, distributed scaling model. Permanent access to the hardware infrastructure is required.
+*** Distributed Computing
+
+Since I anticipate the Protoverse rather as a forever-running application than a batch computation (open-ended quasi-darwinian evolution), I lean towards a distributed, horizontal scaling model with redundant nodes, that runs in the cloud, and eventually might even run on commodity hardware (e.g. a heterogenous peer-to-peer network): much like BOINC, or even like Ethereum or Bitcoin.
+** State Management, Pruning and Data Compression
+
+We probably have to consider resource-saving techniques earlier in the development process; also taking into consideration, how much of Protoverse history will have to be kept around. We have to consider if a Markovian approach (history-less) would be possible, and where.
+
+Clever resource management plays a larger role if he Protoverse takes the path of being implemeted as a long-running application. There could be intrinsic selection (as a part of the Protoverse dynamics) that effectively prunes certain Nested Scales Of Complexity when it is highly probable that nothing interesting happens at these; e.g. when they turn out random and too boring and therefore "non-viable". On the other side -- even inconspicuous, boring dynamics can turn out to be further influential for evolution, and the extent may be unforeseeable.
 ** Computation by Need
 
 The concept of "observer dependency" (which is part of the metaphysics, the universe being participatory) could be understood that the state of a Process is not determined (computed) until it is "observed" -- /observation as evaluation/ or observational computation (not to confuse with the "Gang of Four" observer pattern, which is something else).
@@ -161,6 +177,14 @@ The analogy becomes stronger, if we buy into the idea that our universe is someh
 I've got a feeling that infinite structures for data representation (open-endedness) might be naturally pervasive in the Protoverse, and dealing with this data easily would simplyfy certain things. This may require non-strict evaluation (laziness).
 
 Theoretically, might turn out practical to follow such an approach to save computing resources; but it might also turn out extremely impractical (piling up thunks). Any way, it deserves consideration and further thought.
+** Portability
+
+Unforseen complications may likely require to switch certain parts of the implementation during development, e.g. the runtime. It would make sense to write the model in a language that could be ported to something else without too much effort.
+
+The first what comes to mind are C and C++. But these are very low-level or and ugly, and I'm pretty sure I wouldn't come very far with one of these as a modeling language. But there are other aspects:
+
+1. Use a high-level language that compiles to either a low-level language or can target multiple backends; for instance, there are a few Scheme dialects that target various platforms, and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
+2. Adher to portable code, that means following a standard closely (e.g. R6RS for the Scheme language).
 ** Observability: Visualization, Analysis and Profiling
 
 Meta-functionality is complicated stuff and imposes overhead that eats away development resources; it's quite boring but neccessary.
@@ -170,28 +194,6 @@ Meta-functionality is complicated stuff and imposes overhead that eats away deve
 ** Interfacing With Other Ecosystems
 
 It might turn out beneficial if a bigger language ecosystem is within reach, either by directly building on that very ecosystem/platform, or via straightforward interop. This might be useful for analysis, visualization, measuring; or to offload heavy computations if they cannot be implemented efficiently in the primary language/runtime; or to use specific scientific libraries. Possible targets are the usual suspects: Rust, C, C++, but also Java and Python.
-** State Management, Pruning and Data Compression
-
-We probably have to consider resource-saving techniques earlier in the development process; also taking into consideration, how much of Protoverse history will have to be kept around. We have to consider if a Markovian approach (history-less) would be possible, and where.
-
-Clever resource management plays a larger role if he Protoverse takes the path of being implemeted as a long-running application. There could be intrinsic selection (as a part of the Protoverse dynamics) that effectively prunes certain Nested Scales Of Complexity when it is highly probable that nothing interesting happens at these; e.g. when they turn out random and too boring and therefore "non-viable". On the other side -- even inconspicuous, boring dynamics can turn out to be further influential for evolution, and the extent may be unforeseeable.
-** Portability
-
-Unforseen complications may likely require to switch certain parts of the implementation during development, e.g. the runtime. It would make sense to write the model in a language that could be ported to something else without too much effort.
-
-The first what comes to mind are C and C++. But these are very low-level or and ugly, and I'm pretty sure I wouldn't come very far with one of these as a modeling language. But there are other aspects:
-
-1. Use a high-level language that compiles to either a low-level language or can target multiple backends; for instance, there are a few Scheme dialects that target various platforms, and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
-2. Adher to portable code, that means following a standard closely (e.g. R6RS for the Scheme language).
-** Scalability
-
-First and foremost, the prevalent status will be "under development"; and increasing counsumption of resources. Therefore relatively straightforward scaling should be baked-in from the very beginning. It depends on the principal modus operandi of the Protoverse which scaling model to prefer:
-
-- Batch-processing: This approach leans toward vertical scaling, throwing more powerful hardware on it, e.g. CPU/GPU arrays. This hardware wouldn't have to be available all the time.
-- Long-running: The Protoverse as a continuously running application could benefit from a horizontal, distributed scaling model. Permanent access to the hardware infrastructure is required.
-*** Distributed Computing
-
-Since I anticipate the Protoverse rather as a forever-running application than a batch computation (open-ended quasi-darwinian evolution), I lean towards a distributed, horizontal scaling model with redundant nodes, that runs in the cloud, and eventually might even run on commodity hardware (e.g. a heterogenous peer-to-peer network): much like BOINC, or even like Ethereum or Bitcoin.
 * Programming Environment and Language
 
 The following assessment is about choosing the primary platform/language for modeling and implementation. There are gradual pros/cons which are rather tricky to gauge at this point, not knowing in advance what requirements will turn out more or less important over the course of the project; and there are absolute dealbreakers too.
