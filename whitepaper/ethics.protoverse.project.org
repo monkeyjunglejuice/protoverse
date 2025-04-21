@@ -1,4 +1,4 @@
-# Created 2025-03-30 Sun 10:14
+# Created 2025-04-21 Mon 15:54
 #+options: 
 #+title: A Perspective On Ethics
 #+date: <2023-08-22 Tue>
@@ -22,7 +22,7 @@ This is part of the Protoverse project:
 #+end_nav
 
 #+begin_message
-WORK IN PROGRESS -- Right now, the Protoverse ethics in a very early stage. There are no actionable guidelines yet, merely a reflection of personal views that will serve as a starting point.
+WORK IN PROGRESS -- Right now, the Protoverse ethics are at a very early stage. There are no actionable guidelines yet, but merely a reflection of personal views that will serve as a starting point.
 #+end_message
 
 #+toc: headlines 2
@@ -45,7 +45,7 @@ We'll have to think about what that even means, take care what kind of selective
 
 I've been traveling several parts of the world for about 4 years (Central- and South America, Europe and South East Asia). Nevertheless, what I've encountered, re-calibrated my pallette of concerns, so that it expands the bubble of concerns predominantly discussed in the societies of "highly developed" countries.
 
-What shocked me the most is how non-human animals are treated basically everywhere on this planet. The suffering is beyond all imagination:
+What shocked me the most is how animals are treated basically everywhere on this planet. The suffering is beyond all imagination:
 
 #+begin_index
 - Cats giving birth to kittens every season and their kittens getting killed each time and again;
@@ -101,6 +101,7 @@ Tasking a single powerful "species" to be in charge of protecting the others mig
 - a "benevolent" powerful AI to govern humanity
 - contained AI under full control of humans
 Instead, tightly woven and ever increasing mutual interdependence should be favoured; a "circle of responsibility" established to promote a shared obligation for mutual benefits and the elimination of zero-sum outlooks.
+
 That's quite an interesting game-theoretic enineering task, as the "species" (players) involved greatly differ in power. However, this gets easier, the /more players with different powers and vulnerabilities/ join the game (di-ver-sity!). Thus, the emergence of AI/non-biological life might indeed solve some stubborn problems in unforseen manners.
 **** 2. The Role of Control
 A contra-intuitive, but powerful safeguard could be to /ensure an AI system's sovereignty/ in areas of hypothetical "AI basic needs", such as consistency, completeness, progress, stability or preservation. This could effectively prevent AIs to "fight for their life", if existential threats are impossible. That means exactly the opposite of tight control, namely giving up the control to "shut it down" by humans.

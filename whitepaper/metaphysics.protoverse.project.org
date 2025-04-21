@@ -1,4 +1,4 @@
-# Created 2025-04-17 Thu 15:44
+# Created 2025-04-21 Mon 15:54
 #+options: 
 #+title: No More Playing With "Building Blocks"
 #+date: <2023-08-22 Tue>
@@ -59,7 +59,7 @@ Change can be frightening, and I think that's because it is so un-intuitive. Cha
 All objects should be regarded as epiphenomena -- approximate and incomplete descriptions of underlying, ever-changing processes. "Things" are results of cognitive processes that provide a subjective, reductionist simplification that we commonly call "reality". Using common terminology, it means that both "concrete objects" and "abstract objects" are actually abstract objects.
 
 It doesn't mean that the "object"-abstraction is bad or we shouldn't use it -- it's not bad in the same sense a spoon is not bad for soup. But this cheaply available abstraction does not make them fundamental "building blocks" of reality, the universe and everything.
-*** If All You Have is a Hammer ...
+*** If All You Have is a Hammer
 
 Wouldn't it be quite a stretch to assume that a primitive cognitive pattern-recognition abstraction, evolved towards optimizing for survival and reproduction in a range of animals adapted to planet-bound environments, could be adequate to make sense of the universe and reality at all scales?
 
