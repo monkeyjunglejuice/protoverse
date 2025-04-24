@@ -1,4 +1,4 @@
-# Created 2025-04-24 Thu 14:56
+# Created 2025-04-24 Thu 15:09
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -467,15 +467,15 @@ I'll be "re-inventing the wheel" several times, which certainly will lead to ine
 
 To me, it seems that covering much ground quickly by focussing on the model and abstractions is crucial, therefore I want to work as high-level as possible, avoiding clutter in order to free mental capacity.
 
-Most "scientific" projects are currently done in Python, in combination with certain libraries that are written in C and C++ who are doing the heavy lifting; and there's a huge amount done in Java, too -- but I don't really want to work with these languages (they are all quite ugly); even Scala and Rust don't seem to be great options, either (verbose, low-level, manual). So?
+Most "scientific" projects are currently done in Python, in combination with certain libraries that are written in C and C++ who are doing the heavy lifting; and there's a huge amount done in Java, too (and Scala to some degree) -- but I don't really want to work with these languages (they are all quite complicated, verbose and ugly); even Rust doesn't seem to be a great option either (verbose, low-level, manual). So?
 *** The Finalists
 
 I'd like to pick two languages/platforms that are somewhat orthogonal:
+**** 1. Erlang (Elixir)
 
-1. The *Erlang* platform, using either Elixir and/or Erlang, follows a connectivity-based approach (message passing): The BEAM is not very performant for CPU-bound-, but for IO-bound computing. However, CPU-intensive parts could be later ported to high-performance implementations if that's necessary.
+The Erlang platform, using either Elixir and/or Erlang, follows a connectivity-based approach (message passing): The BEAM is not very performant for CPU-bound-, but for IO-bound computing. However, CPU-intensive parts could be later ported to high-performance implementations if that's necessary.
 
 The actor model, available at the language level, makes it convenient to write concurrent (and parallel) programs. As per my current view, it seems close to how I picture the Protoverse model (I might be wrong).
 
 The actor model basically nudges you into decoupling your code, and the scheduler parallizes automatically where it sees fit. But it doesn't stop there: each Erlang process has it's own stack, heap and garbage collector - and you can have a million or more of these processes in a single node.
-
-1. And what should be the other finalist?
+**** 2. And what should be the other finalist?
