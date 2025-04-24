@@ -1,4 +1,4 @@
-# Created 2025-04-23 Wed 19:18
+# Created 2025-04-24 Thu 10:17
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -110,7 +110,7 @@ Since I asssume the more interesting stuff is likely to happen the longer the Pr
 
 A lot of stuff is going to happen in realtime. Eventually I'm expecting many billions of smallish, interacting computations. In the early stages, where the focus is on modelling the Process abstraction and dynamics, the capacity to handle a couple of millions might be enough, which should be achievable in the cloud, on a small Rasperry Pi cluster or even a bunch of laptops.
 
-Before we come to concurrency and parallelism: the concepts are often mixed up, and understandably so -- [[https://wiki.haskell.org/index.php?title=Parallelism_vs._Concurrency][here's an explanation]]. Parallelism is the thing that we really want.
+Before we come to concurrency and parallelism: the concepts are often mixed up, and understandably so -- [[https://wiki.haskell.org/index.php?title=Parallelism_vs._Concurrency][here's an explanation]] and [[https://www.classes.cs.uchicago.edu/archive/2017/spring/22300-1/lectures/ConcurrencyParallelism/ConcurrencyParallelism.pdf][here]]. Parallelism is the thing that we really want.
 
 The crux with current architectures is that parallelism is tied to the number of /physical/ cores available. Regular CPUs have a dozen up to a couple of dozen cores, GPUs around 16,000 cores. The ideal thing to have would be something like "real-time-soft-scalable" parallelism, but in practical terms with current architecture we need both, the "normal" interleaving or time-slicing concurrency and true parallelism.
 *** Concurrency
@@ -407,8 +407,8 @@ Sentiment: Dealing with the Java stuff and lingo is unpleasant yet unavoidable. 
 - The state of a running image can be dumped and restored, but that won't work out-of-the box for a distributed system;
 - Great Emacs integration, simple tooling (sly, quicklisp, asdf and roswell)
 - Concurrency: [[https://github.com/mdbergmann/cl-gserver][Sento]] actor framework is the most promising; and there are [[https://github.com/dbmcclain/Lisp-Actors][Lisp-Actors]] or [[https://github.com/zkat/chanl][ChanL]]. Most concurrency facilities seem to rely directly on OS-threads instead of something like "lightweight processes", though.
-- No concurrent garbage collector, stop-the-world;
-- Not so polished for parallelism and distributed computing in comparison to the other candidates, maybe [[https://github.com/marcoheisig/cl-mpi/][OpenMPI bindings]] (likely an overkill and I know nothing about [[https://www.open-mpi.org][OpenMPI]]);
+- No concurrent garbage collector but stop-the-world;
+- Ther are [[https://github.com/marcoheisig/Petalisp][Petalisp]] (data parallelism), Lparallel and [[https://github.com/marcoheisig/cl-mpi/][OpenMPI bindings]] (likely an overkill, see [[https://www.open-mpi.org][OpenMPI]]);
 - SBCL is performant (Java ballpark);
 - Low-level access to the language itself, plenty of optimizations;
 - Collab opportunities: Community is diverse yet enthusiastic, fragmented, less collaborative (many one-person-projects rather than common goals realized);
