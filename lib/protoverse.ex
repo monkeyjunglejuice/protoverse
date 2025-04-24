@@ -5,6 +5,6 @@ defmodule Protoverse do
   """
 
   def run do
-    IO.puts "Hello"
+    IO.puts("Hello")
   end
 end
