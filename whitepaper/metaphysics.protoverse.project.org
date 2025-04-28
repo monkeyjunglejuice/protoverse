@@ -1,6 +1,6 @@
-# Created 2025-04-24 Thu 13:24
+# Created 2025-04-27 Sun 17:34
 #+options: 
-#+title: No More Playing With "Building Blocks"
+#+title: No More Playing with "Building Blocks"
 #+date: <2023-08-22 Tue>
 #+author: Dan Dee
 #+email: MonkeyJungleJuice@pm.me
