@@ -1,4 +1,4 @@
-# Created 2025-04-24 Thu 15:09
+# Created 2025-12-03 Wed 14:22
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -183,8 +183,8 @@ Unforseen complications may likely require to switch certain parts of the implem
 
 The first what comes to mind are C and C++. But these are very low-level or and ugly, and I'm pretty sure I wouldn't come very far with one of these as a modeling language. But there are other aspects:
 
-1. Use a high-level language that compiles to either a low-level language or can target multiple backends; for instance, there are a few Scheme dialects that target various platforms, and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
-2. Adher to portable code, that means following a standard closely (e.g. R6RS for the Scheme language).
+a) Use a high-level language that compiles to either a low-level language or can target multiple backends; for instance, there are a few Scheme dialects that target various platforms, and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
+b) Adher to portable code, that means following a standard closely (e.g. R6RS for the Scheme language).
 ** Observability: Visualization, Analysis and Profiling
 
 Meta-functionality is complicated stuff and imposes overhead that eats away development resources; it's quite boring but neccessary.
@@ -372,24 +372,33 @@ The following assessment is about choosing the primary platform/language for mod
 - Static typing + algebraic data types;
 - Supports multicore (SMP) parallelism using a thread pool;
 - Portability: compiles to C, JavaScript, and several other backends;
-- Recursion depth is adjustable via compiler options, but the option accepts int16, which means no more than 32,767 recursion depth;
+- Recursion depth is adjustable via compiler options, but the option accepts int16, which means no more than 32,767 recursion depth(?);
 - The language is both high-and low-level, has multiple GC options and also manual memory management;
 - Both concurrency and parallelism primitives seem rather low level and target native OS threads rather than lightweight threads;
 - There are some high-level concurrency implementations, e.g. "[[https://git.syndicate-lang.org/ehmry/syndicate-nim][Syndicated Actors]]" ([[https://news.ycombinator.com/item?id=41244468][discussion]]), however this is something entirely different from Erlang's communicating lightweight processes; in its application possibilities it seems related to [[https://spritely.institute/goblins/][Spritely Goblins]];
 - Has many interesting libraries, e.g. a [[https://github.com/mratsim/Synthesis][state-machine generator]];
-- The language seems kinda stable, but there are a lot of deprecations and even a rewrite of the compiler going on;
+- The language should be kinda stable, but then there are a lot of deprecations and even a rewrite of the compiler going on;
 - Collab opportunities: Even though the language doesn't draw a lot of attention, there's already a very diverse landscape of libraries and projects written in NIM, and attracts even academics.
+*** Lua
+- Simple, versatile and multi-paradigm, super expressive
+- No ad-hoc inspection of values or data structures (well, tables) - coming from Lisp languages, this feels like driving with eyes closed;
+- Some gotchas, e.g. discarding arguments when functions are applied to too many arguments, the local vs. global thing, and verbosity
+- There are workarounds, e.g. Fennel as a lispy language on top of Lua;
+- Has tail call optimization, which is nice;
+- Single-core concurrency only;
+- I couldn't figure out how to parallelize Lua programs in reasonable time
+- There are some attempts to make it "multicore", but not maintained;
 *** JVM: Clojure
 
 - Functional paradigm, in principle a nice and clean take on Lisp;
-- Recursion support: no TCO, but acknowledged by loop/recur workaround due to JVM characteristics;
+- Recursion support: no TCO, but acknowledged by loop/recur workaround due to JVM limitations;
 - Interactive and live-coding, working at the running program is possible;
 - Great Emacs integration and prototyping ergonomics;
 - Has metaprogramming (hygienic), but that seems rather discouraged;
 - Optional type system [[https://github.com/typedclojure/typedclojure][Typed Clojure]] (?); [[https://clojure.org/about/spec][clojure.spec]] isn't a type system but for runtime validation;
 - Lazy sequences;
 - Concurrency: Several concurrency abstractions; [[https://www.youtube.com/watch?v=yJxFPoxqzWE][core.async]] implements [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP-style]] concurrency and allows channels to be passed as values; but memory is shared (unlike Erlang's processes);
-- I ran into various errors when I did trivial benchmarks involving 100k concurrent computations via core.async "go blocks"; I did a few trivial benchmarks and depending on which concurrency facility you use, I was always running into some limitations when it comes to large numbers of concurrent operations;
+- I ran into various errors when I did trivial benchmarks involving 100k concurrent computations via core.async "go blocks"; depending on which concurrency facility used, I ran constantly into some limitations when it came to large numbers of concurrent operations;
 - Portability: Clojure targets several host platforms officially, e.g. JVM, JavaScript, CLR; and there are inofficial implementations, e.g. Erlang/Beam, but these are highly experimental;
 - Observability: JVM has lots of profilers and tools;
 - Clojure has a non-copyleft license (Eclipse License)
@@ -407,28 +416,29 @@ The following assessment is about choosing the primary platform/language for mod
 - The state of a running image can be dumped and restored, but that won't work out-of-the box for a distributed system;
 - Great Emacs integration, simple tooling (sly, quicklisp, asdf and roswell)
 - Concurrency: [[https://github.com/mdbergmann/cl-gserver][Sento]] actor framework is the most promising; and there are [[https://github.com/dbmcclain/Lisp-Actors][Lisp-Actors]] or [[https://github.com/zkat/chanl][ChanL]]. Most concurrency facilities seem to rely directly on OS-threads instead of something like "lightweight processes", though.
-- No concurrent garbage collector but stop-the-world;
-- Ther are [[https://github.com/marcoheisig/Petalisp][Petalisp]] (data parallelism), Lparallel and [[https://github.com/marcoheisig/cl-mpi/][OpenMPI bindings]] (likely an overkill, see [[https://www.open-mpi.org][OpenMPI]]);
+- No conurrent garbage collector but stop-the-world;
+- There are [[https://github.com/marcoheisig/Petalisp][Petalisp]] (data parallelism), Lparallel and [[https://github.com/marcoheisig/cl-mpi/][OpenMPI bindings]] (likely an overkill, see [[https://www.open-mpi.org][OpenMPI]]);
 - SBCL is performant (Java ballpark);
 - Low-level access to the language itself, plenty of optimizations;
+- Problem with these "optimizations": it's required to figure out which you need and apply them, otherwise you'll miss out on performace;
 - Collab opportunities: Community is diverse yet enthusiastic, fragmented, less collaborative (many one-person-projects rather than common goals realized);
 
-/Sentiment: I'm afraid that Common Lisp could be a dead end when it comes to massive concurrency & parallelism: "[[https://www.reddit.com/r/lisp/comments/tw7zqr/what_is_a_feature_of_other_languages_that_you/][(..) high level parallelism in lisp just sucks]]". But it might be sensible to set up some benchmarks, (e.g. with Sento) before dismissing CL, because otherwise CL seems an excellent choice for such a project./
+/Sentiment: I'm afraid that Common Lisp could be a dead end when it comes to massive concurrency & parallelism: "[[https://www.reddit.com/r/lisp/comments/tw7zqr/what_is_a_feature_of_other_languages_that_you/][(..) high level parallelism in lisp just sucks]]". But it might be sensible to set up some benchmarks, (e.g. with Sento) before dismissing CL, because otherwise CL seems like an excellent choice for such a project./
 ** Specialized Programming Languages and Runtimes
 
-While low-level languages like CUDA or OpenCL for GPU computing are well established, high-level languages for massive parallelism are a more recent invention:
+While low-level languages like CUDA or OpenCL for GPU computing are well established, high-level languages for massive parallelism are a more recent invention. Up front: I'm expecting the Protoverse turning out as largely benefitting from task-parallelism rather than data-parallelism, so it might not translate well to GPUs at all. Nevertheless I list them here as part of the evaluation process.
 *** Bend
 
 - Two surface syntaxes: Python-style and ML-style;
 - High-level: higher-order functions, closures, unrestricted recursion, continuations;
 - Untyped language -- types seem to be mere documentation, ADT syntax sugar is there to define constructor functions (see [[https://github.com/HigherOrderCO/Bend/blob/main/FEATURES.md][features]]);
-- Aims to provide fully transparent (implicit?) parallelism, no manual managment of parallelization (no thread creation, locks, mutexes, etc.);
+- Aims to provide fully transparent "automatic" parallelism, no manual managment of parallelization (no thread creation, locks, mutexes, etc.);
 - Compiler can generate massively parallel GPU kernels from high-level code;
 - Based on interaction nets ([[https://en.wikipedia.org/wiki/Interaction_nets][Wikipedia]], [[https://www.semanticscholar.org/paper/Interaction-Combinators-Lafont/6cfe09aa6e5da6ce98077b7a048cb1badd78cc76][paper]]);
 - Still experimenal/research state;
 - https://github.com/HigherOrderCO;
 - [[https://discourse.julialang.org/t/bend-a-new-gpu-native-language/114440/16][Discussion in Julia forum]];
-- Gained some traction, has good marketing;
+- Gained some attention, has good marketing;
 *** Futhark
 
 - Simple, ML-style, purely functional;
@@ -438,6 +448,7 @@ While low-level languages like CUDA or OpenCL for GPU computing are well establi
 - [[https://futhark-book.readthedocs.io/en/latest/language.html#sequential-loops][Doesn't support recursive functions]];
 - Statically typed;
 - Nested data-parallelism (array language);
+- Probably exactly the opposite of what's needed for the Protoverse;
 - Targets [[https://futhark-lang.org/blog/2024-07-17-opencl-cuda-hip.html][CUDA, OpenCL and HIP]];
 - Can compile to a Python module that internally uses PyOpenCL;
 - Can compile to C code and WASM;
@@ -455,27 +466,43 @@ While low-level languages like CUDA or OpenCL for GPU computing are well establi
 
 - "[[https://github.com/lunatic-solutions/lunatic][Lunatic]] is an Erlang-inspired runtime for WebAssembly";
 - Supports [[https://github.com/lunatic-solutions/lunatic-rs][Rust]] and [[https://github.com/lunatic-solutions/as-lunatic][AssemblyScript]] (for now);
-- Theoretically, it also could support Guile with [[https://codeberg.org/spritely/hoot][Hoot]]; but that's a lot of work;
-- Still experimental, and seems abandoned too;
+- Theoretically, it could support Guile with [[https://codeberg.org/spritely/hoot][Hoot]]; but that's a lot of work;
+- Still experimental, and it seems abandoned anyway;
 ** Conclusion
 
-The Protoverse project ventures into uncharted territory, and my gut feeling says that I should counterbalance that notion with adhering to mature, "industrial-grade" technology where possible.
+The Protoverse project ventures into uncharted territory, and my gut feeling says that I should counterbalance that notion with adhering to mature, "industrial-grade" technology wherever possible.
 
-I'm not expecting to plug libraries together (how most "software engineering" is done today), but to go through a journey of discovery and exploration, and to think through the whole process "from scratch", and the language should support that (it's pretty close to the paradigm embodied by the Scheme language).
+I'm not expecting to plug libraries together (how most "software engineering" is done today), but to go through a journey of discovery and exploration, and to think through the whole process "from scratch", and the language should support that.
 
 I'll be "re-inventing the wheel" several times, which certainly will lead to inefficient, naive implementations (evolutionary algorithms are such a candidate, for instance). In such cases it will be desirable to draw from established algorithms/libraries, after I have developed an understanding beforehand.
 
 To me, it seems that covering much ground quickly by focussing on the model and abstractions is crucial, therefore I want to work as high-level as possible, avoiding clutter in order to free mental capacity.
 
-Most "scientific" projects are currently done in Python, in combination with certain libraries that are written in C and C++ who are doing the heavy lifting; and there's a huge amount done in Java, too (and Scala to some degree) -- but I don't really want to work with these languages (they are all quite complicated, verbose and ugly); even Rust doesn't seem to be a great option either (verbose, low-level, manual). So?
+Most "scientific" projects are currently done in Python, in combination with certain libraries that are written in C and C++ responsible for the heavy lifting; and there's a huge amount done in Java, too (and Scala to some degree) -- but I don't really want to work with these languages, as these are all quite complicated, verbose and ugly); even Rust doesn't seem to be a great option either (verbose syntax, low-level, manual). So?
 *** The Finalists
 
-I'd like to pick two languages/platforms that are somewhat orthogonal:
-**** 1. Erlang (Elixir)
+I'd like to consider two languages/platforms for the role of the primary language/runtime.
 
-The Erlang platform, using either Elixir and/or Erlang, follows a connectivity-based approach (message passing): The BEAM is not very performant for CPU-bound-, but for IO-bound computing. However, CPU-intensive parts could be later ported to high-performance implementations if that's necessary.
+What they have in common:
 
-The actor model, available at the language level, makes it convenient to write concurrent (and parallel) programs. As per my current view, it seems close to how I picture the Protoverse model (I might be wrong).
+- Deep recursion is idiomatic (no stack overflows);
+- Both offer high-level concurrency facilities;
+- Both are "multicore" capable without manual thread management;
+- Both offer different degrees of interactivity;
+- Both provide excellent interoperability with low-level code;
+**** 1. BEAM (Erlang, Elixir, LFE)
 
-The actor model basically nudges you into decoupling your code, and the scheduler parallizes automatically where it sees fit. But it doesn't stop there: each Erlang process has it's own stack, heap and garbage collector - and you can have a million or more of these processes in a single node.
-**** 2. And what should be the other finalist?
+The actor model - available at the language level - makes it convenient to write concurrent programs, and the BEAM parallelizes automatically where it sees fit. Each Erlang process has it's own stack, heap and garbage collector - and you can have a million or more of these processes in a single node. Overall, the GC story is pretty compelling.
+
+The BEAM is not very performant for CPU-bound-, but for IO-bound computing. E.g. Guile turns out twice as fast as Elixir (benchmark: sequential, non-tail-recursive algorithms on binary trees with ~67 million nodes). However, CPU-intensive parts could be ported to high-performance implementations where necessary.
+
+The BEAM is rather "infrastructure" and "industry" centred, and its languages require quite a bit of ceremony and overall, the framework character (OTP) shines through - it's rather "translate your problem to OTP" rather than "mold your language to fit the problem". That feels a bit clunky for ad-hoc experimentation -- on the other hand, people are capable to write quite sophisticated things in something like C++. Probably I should take a second look at LFE though.
+**** 2. Guile Scheme
+
+Guile provides high-level concurrency facilites (fibers in conjunction with a work-stealing scheduler) and a channel-based concurrency model (like concurrent ML or Golang). Workload can be spread over multiple cores without manual thread management.
+
+It may be surprising, but Guile Scheme looks quite feasible as a candidate for the primary language, because it has become much more than just an "extension language" for "scripting applications written in C". For instance, it seems to handle large data structures and hefty allocation quite well -- out-of-the-box, in the REPL.
+
+The GC (as of version 3.0.10) seems to need less attention compared to SBCL's current GC (version 2.5.10). When I did some benchmarks with deep non-tail-recursion on binary trees with ~67 million nodes (sequential), Guile turned out 1.5 times faster than SBCL, which spent 3/4 of the time with GC. Overall, Guile feels well balanced and therefore quite fast, suited for writing code ad-hoc without ceremony.
+
+Guile's focus is less on infrastructure (like the BEAM languages), and more on expressivity (and exploration), which might be beneficial in the early stages. Nevertheless, there's also stuff going on with distributed computing (e.g. Spritely Goblins).

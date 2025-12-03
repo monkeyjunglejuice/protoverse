@@ -1,4 +1,4 @@
-# Created 2025-04-24 Thu 13:24
+# Created 2025-12-03 Wed 14:19
 #+options: 
 #+title: Creating an Open-ended Artificial Universe
 #+date: <2023-08-22 Tue>
