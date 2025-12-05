@@ -1,4 +1,4 @@
-# Created 2025-12-03 Wed 14:19
+# Created 2025-12-05 Fri 16:04
 #+options: 
 #+title: No More Playing with "Building Blocks"
 #+date: <2023-08-22 Tue>
@@ -34,10 +34,10 @@ WORK IN PROGRESS -- Just landed here? You may want to check out the [[file:intro
 "I see and touch these things? Are they not ... there?"
 #+end_quote
 
-It comes quite "natural" for us to view the world as an assembly of objects or discrete entities -- The neighbour's dog's nose, justice, this book, my kitchen, the three body problem -- are conventionally understood as "objects" in the broadest sense —- somehow more or less discrete "things" that "are". It's largely an /intuitive/ perspective. We're even having a special type of label for those things in our languages -- the noun.
+It comes quite "natural" for us to view the world as an assembly of objects or discrete entities -- The neighbour's dog's nose, justice, this book, my kitchen, the three body problem -- are conventionally understood as "objects" in the broadest sense -- somehow more or less discrete "things" that "are". It's largely an /intuitive/ perspective. We're even having a special type of label for those things in our languages -- the noun.
 
 #+begin_quote
-"Well, these things are there if you believe in them, sort of. It's just ... they are not what they seem ... because first and foremost, they are not "things"; and secondly, they not are ..." X-Files melody playing;
+"Well, these things are there if you believe in them, sort of. It's just ... they are not what they seem ... because first and foremost, they are not "things"; and secondly, they not "are" ..." X-Files melody playing;
 #+end_quote
 
 Concepts of "objects" with inherent "properties" seem an universal feature across human culture. However, there are some philosophical traditions unlike western philosophy, such as certain schools within Buddhism, where processual views of the universe are more the rule than exception: acknowledging flux, change and [[https://en.wikipedia.org/wiki/Prat%C4%ABtyasamutp%C4%81da][dependent origination]] rather than distinct, static objects.
@@ -46,10 +46,10 @@ Discrete objects seem to be most likely a result of cognitive evolution in human
 
 While humans are largely visually oriented, other animals rely more on sounds, smells, electric fields, or vibrations to various extends. For instance, dogs rely heavily on smell to make sense of the world. Even more than that -- dogs seem not to trust their eyes at all; their nose is the final instance. This kind of perception seems not so much centered on "objects", but gives them access olfactory landscapes that map out overlapping scent trails, conveying a wealth of process information such as the passage of time and the activities and even mood of other creatures (I wish I could find that TikTok again, where a dog follows overlapping scent trails in a city neighbourhood).
 
-Well, have you ever experienced that: You're sitting at the beach, watching the sun disappear behind the horizon — and suddenly there comes this moment of awe, where you realize that it is the ground that tilts beneath you? You experience the vast sphere rolling backwards away from the diminishing light, taking you with it? (The effect is best experienced when there are no distractions in your peripheral vision -- e.g. you sit on a spit -- so that you see nothing but the beach, water and the sky)
+Well, have you ever experienced that: You're sitting at the beach, watching the sun disappear behind the horizon -- and suddenly there comes this moment of awe, where you realize that it is the ground that tilts beneath you? You experience the vast sphere rolling backwards away from the diminishing light, taking you with it? (The effect is best experienced when there are no distractions in your peripheral vision -- e.g. you sit on a spit -- so that you see nothing but the beach, water and the sky)
 *** There is no Spoon
 
-The realization that there are in fact no stable objects, no "things" to find anywhere you look, comes more gradually though. Like in my the example concering the rotating earth, the intensity of that experience has to do with our temporal perception — and wether you can detect a notion of change or not (it also helps to watch timelapses).
+The realization that there are in fact no stable objects, no "things" to find anywhere you look, comes more gradually though. Like in my the example concering the rotating earth, the intensity of that experience has to do with our temporal perception -- and wether you can detect a notion of change or not (it also helps to watch timelapses).
 
 The perspective widens even more, if you zoom out and set the time of an average human's lifespan in relation with the earth's or the universe's estimated age. You will realize there's actually nothing intrinsically special about what we consider "vast" or "incredibly tiny". Even 500 years old trees are wood fountains that blip up and perish like fireworks. Once you keep that in mind, you might assign much less significance to "objects", or hold on to a static, stable and substantial understanding of reality.
 
@@ -63,9 +63,9 @@ It doesn't mean that the "object"-abstraction is bad or we shouldn't use it -- i
 
 Wouldn't it be quite a stretch to assume that a primitive cognitive pattern-recognition abstraction, evolved towards optimizing for survival and reproduction in a range of animals adapted to planet-bound environments, could be adequate to make sense of the universe and reality at all scales?
 
-Of course that's not the whole story: Certainly, humans are developing tools and methods like mathematics and technology to overcome their limitations. But a closer look reveals that most methods are built on the the same substance-materialist preconceptions.
+Of course that's not the whole story: Certainly, humans are developing tools and methods like mathematics and technology to overcome their limitations. But a closer look reveals that most methods are built on the the same substance-materialist preconceptions, serving substance-materialist purposes.
 
-A whole "universe" has been created around the idea of objects in various manifestations, e.g. 'person', 'number' or 'particle', assuming that they must be somehow special, important or fundamental — just because they seem so /intuitive/ — "I think, therefore they are", no? Who in his right mind could deny that?
+A whole "universe" has been created around the idea of objects in various manifestations, e.g. 'person', 'number' or 'particle', assuming that they must be somehow special, important or fundamental -- just because they seem so /intuitive/ -- "I think, therefore they are", no? Who in his right mind could deny that?
 
 But our theories might be much more contingent on human intuition than we usually admit. There are numerous hints, that we long ago entered territory where our intuitive concept of a substance-based reality is a hindrance, has lost it's use, or is falling apart entirely: when grappling with abstract concepts (like emotions, mathematics, software), emergent phenomena (like businesses or complex systems), and fields on the edge of human knowledge (such as neuroscience, quantum mechanics and consciousness).
 
@@ -73,10 +73,10 @@ The nasty habit to objectify everything may cause us to miss important subtletie
 
 Certain phenomena may appear overly complicated or even paradoxical only because we use inadequate abstractions to begin with. What about the particle zoo, the 1001 interpretations of quantum mechanics, particle-wave duality? What else?
 
-We'll need to consider a paradigm shift: a worldview constituted from /process, relation and transformation/, to finally get out of the stuffy theater where the particles dance to the beat of time on a stage of space.
+We'll need to consider a paradigm shift: a worldview constituted from /process, relation and transformation/, to finally get out of the stuffy theater where particles dance to the beat of time on a stage of space.
 * What are Processes?
 
-It seems commonly accepted to say that there could be many patterns in our universe that certain "observers" might recognize that others might not — due to their evolutionary, cultural, cognitive or technological limitations, advancements or perspectives.
+It seems commonly accepted to say that there could be many patterns in our universe that certain "observers" might recognize that others might not -- due to their evolutionary, cultural, cognitive or technological limitations, advancements or perspectives.
 
 A [[https://www.youtube.com/watch?v=jlqqZZ7q4-s][vine]] certainly may not experience reality like a [[https://www.youtube.com/watch?v=Qv-ETrzgOj8][gecko]] does. There are countless examples that suggest our perception and understanding of reality must be hopelessly subjective too, depending on the patterns we're able to observe, describe and make sense of.
 
@@ -93,7 +93,7 @@ Quantum mechanics raised the suspicion of "observer dependency" -- but of course
 
 Processes naturally incorporate all requirements to be regarded as /observers/ across all (known) domains of inquiry, via their registration of change (or more specific: their own change) as a result of interaction (we could call that "Experience"). Further, they operate within a specific context, and adapt through feedback mechanisms. Observation is not an additional property but an intrinsic aspect of every Process, as they continually interact and adapt.
 
-Observers arise on a spectrum, and they are pervasive. At this point we can merge 'observers' into /Processes/, which we will use as the prime abstraction within the Protoverse.
+Observers arise on a spectrum, and they are pervasive. At this point we can generalize 'observers' into /Processes/, which we will use as the prime abstraction within the Protoverse.
 ** Process as the Primary Abstraction
 
 The Process abstracion is prior, and it's the only truly scale-invariant principle. Processes do not exist /within/ an environment or within space or time -- instead, the relational dynamics of processes bring about perceived structures and dimensions, as they continuously /become/ their environment, actively co-creating (co-evolving) the substrate they are operating at.
@@ -103,16 +103,16 @@ Analogy: much like cells in cellular automata, where the grid is not a pre-defin
 There are two distinct ideas about the fundamental constitution of Processes:
 
 #+begin_index
-- *Primitive + higher-order style -- Processes all the way up:* The term 'Process' can refer to one single /primitive/ Process; but it can also mean a conglomerate of Processes, which can be described as one /higher-order/ Process. Both perspectives are equally valid when referring to different scales of complexity or different emergent phenomena. There's no upper limit to higher orders, but a lower end. Higher-order Processes are no "entities" or "actors", but emergent complex systems without fixed boundaries. This is quite like cells and patterns in cellular automata, as there's also a lower end to the pattern resolution --  the "primitive" single cell. I consider this as a pragmatic variant.
+- *Primitive + higher-order style -- Processes all the way up:* The term 'Process' can refer to one single /primitive/ Process; but it can also mean a conglomerate of Processes, which can be described as one /higher-order/ Process. Both perspectives are equally valid when referring to different scales of complexity or different emergent phenomena. There's no upper limit to higher orders, but a lower end. Higher-order Processes are no "entities" or "actors", but emergent complex systems without fixed boundaries. This is quite like cells and patterns in cellular automata, as there's also a lower end to the pattern resolution -- the "primitive" single cell. I consider this as a pragmatic variant.
 
 - *Fractal style -- Processes all the way up and down:* In that scenario, Processes do not consist of primitive Processes, because there is no fundamental Scale and they are infinitely divisible into further Processes. This would be sort of a recursive, fractal-like structure. I consider that variant as quite elegant, since it would be truly one underlying principle from which all complexity emerges -- and who doesn't like fractals? However, there might be one interesting ontological fact to consider: The Protoverse itself as a computational model is no closed system, it merely qualifies as a new nested Scale that gives rise to potentially unlimited new Scales Of Complexity -- but it's fundamentally embedded in our universe.
 #+end_index
 
-Either way, I envision (primitive) Process as a meta-framework that describes Processes as the potential interactions between Processes.
+Either way, I envision (primitive) Process as a meta-framework that describes Processes as the potential interactions between Processes. Yeah, it's self-referential/recursive -- to understand recursion, you'll first need to understand recursion.
 ** Necessary Process Characteristics
 
 #+begin_index
-- It would be quite unwieldy trying to figure out initial rules that produce viability, so there must be intrinsic adaption from the very beginning. Hence I lean towards the principle of Universal Darwinism (more about that later).
+- There's a problem with "fundamental" and "first principles": It would be quite unwieldy trying to figure out initial rules that produce a viable universe. The way out: there must be intrinsic adaption. Hence I lean towards the principle of Universal Darwinism (more about that later).
 
 - Is the process-relational ontology monistic or pluralistic? It's actually both. The monist aspect of Processes as "universal" abstraction provides the neccessary compatibility required to interaction across Nested Scales of Complexity; the manifiestation of these emergent Scales in turn represent the pluralist aspect (each nested scale can emerge its own rules/dynamics), effectively leading to the potentially unlimited scaling required for open-endedness by quasi-darwinian evolution and the evolution of evolvability.
 
@@ -120,18 +120,18 @@ Either way, I envision (primitive) Process as a meta-framework that describes Pr
 
 - If we could follow a [[https://en.wikipedia.org/wiki/Category:Markov_models][Markovian model]], each Process transitions from state to state based on current interactions only, without maintaining a history (I don't have an opinion about that right now, so just as a side note).
 
-- Absolute compatibility in terms of interaction between higher-order Processes are (only) guaranteed at the Scale of their constituent primitive Processes. Higher-order Processes may develop various degrees of interaction -- e.g. more effective, efficient or richer "implementations", which may deviate significantly from the interactions of primitive Processes; e.g. they might interact via evolved, commonly shared protocols or languages. This leads to differentation in interaction capabilities and encapsulation; meaning not everything interacts with everything else to the same extend.
+- Absolute compatibility in terms of interaction between higher-order Processes is (only) guaranteed at the Scale of their constituent primitive Processes. Higher-order Processes may develop various degrees of interaction -- e.g. more effective, efficient or richer "implementations", which may deviate significantly from the interactions of primitive Processes; e.g. they might interact via evolved, commonly shared protocols or languages. This leads to differentation in interaction capabilities and encapsulation; meaning not everything interacts with everything else to the same extend. Example: a hydrogen atom can bond with a carbon atom, but you can't procreate with a piece of wood, even though both of you are made from the same basic stuff.
 #+end_index
 ** Low-level Process Interaction
 
-The primary concept of interaction between processes is the /Experience/. It seems like a suitable term for low-level as well as higher-level interactions. What does a Process experience? Patterns produced by other Processes, because there isn't anything other than Processes (no backdrop or stage-like "environment" -- Processes continuously /become/ (co-evolve) their environment).
+The precursor for interaction between processes is the /Experience/. It seems like a suitable term, stolen from Whitehead's Process Philosophy. What does a Process experience? Patterns produced by other Processes, because there isn't anything other than Processes (no backdrop or stage-like "environment" -- Processes continuously /become/ (co-evolve) their environment).
 
 You can understand Patterns as the raw data of Experience -- the unrealized potentials, 'not-yet-made-sense-of'. Patterns are not to be understood as static or dynamic, as this distinction would imply assumptions that are not justified if we look at Patterns in isolation.
 
-Consequently, the counterpart Processes are also sharing that Experience. There's nothing to Experience without change; and likewise, change can't happen without (causing) an Experience somewhere: everything that happens, always has /some influence/ on another Process, even if this impact is so subtle that it is virtually imperceptible. Nothing exists in isolation. How Processes handle Experience, is another story.
+Consequently, the counterpart Processes are also sharing that Experience. There's nothing to experience without change; and likewise, change can't happen without (causing) an Experience somewhere: everything that happens, always has /some influence/ on another Process, even if this impact is so subtle that it is virtually imperceptible. Nothing exists in isolation. How Processes handle Experience, is another story.
 *** Difference, Equality and Repetition
 
-Experience begins with something changing, and therefore registering of change. So what is even 'change' itself? It seems that change is noticing 'difference'. Oscillation. Oh, and 'waves' again. Yeah I mean it's quite understandable.
+Experience may be tied to something changing (or can there be anything experienced if nothing changes at all?), and therefore registration of change. So what is even 'change' itself? Surely, the term implies the notion of temporality -- before/after. It seems that 'change' means experiencing 'difference'.
 
 In order to build back 'change' from 'difference', there's something else involved. "Time?!" How bold of you to assume time exists a priori! Not so fast. If we think about difference, then there can't be a singular. Difference arises only if there are at least 2 states; or put another way: 2 states come into existence because there's differene.
 
@@ -173,7 +173,7 @@ Interrelated Processes transcend the categorizations we lay up on them: There's 
 
 One sunny morning in June, Stephania is on the way to give a talk about her bestselling book. As she enters the grounds of the venue, she gets hit by a meteorite and Stephania evaporates in a split second. You may now ask yourself ... How big was that meteorite???
 
-That's not the point here ... focus, please. It seems obvious though, that higher-order Processes (Proscesses consisting of Processes) can perish -- by what means, exactly? Does that happen by /transformations/ or /deletion -- complete loss/? Some Processes dissolve, others persist, and new ones establish at that moment. What will be left by this impact? How far through the scales of Processes reaches the impact? What about the primitive Processes?
+That's not the point here ... focus, please. It seems obvious though, that higher-order Processes (Processes consisting of Processes) can perish -- by what means, exactly? Does that happen by /transformations/ or /deletion -- complete loss/? Some Processes dissolve, others persist, and new ones establish at that moment. What will be left by this impact? How far through the scales of Processes reaches the impact? What about the primitive Processes?
 
 To what degree could one Process re-instantiate another cheased high-level Processe, given that there would be traceable, intact relations (redundancy?) within the previously related Processes? How could they be captured?
 *** Baseline or Reference
@@ -301,7 +301,7 @@ There are many reasons for this skepticism (organizational, political, ideologic
 *** Misinterpretation of Implementation Details
 I believe this skepticism primarily arises from mistaking the implementation details of Darwinian evolutionary processes for the processes themselves. This is understandable, as the implementation details of evolutionary processes are vastly diverse across various domains and are themselves subject to evolution. However, if we would treat these processes as [[https://en.wikipedia.org/wiki/Homomorphism][homomorphisms]] and describe them by their algorithmic commonalities and efficacy, we could apply these principles across diverse domains while respecting the unique features of each domain.
 *** Lack of an Integrative Multi-Scale Framework
-The second major issue is the absence of an integrative framework. When contemplating the dynamic structures in our universe, we often categorize and assign hierarchies —- such as physical domain, biological organisms, the mind, society, informational ecosystems, and so on. These categories appear significant to us, but all these distinctions are somewhat arbitrary because they are based on intuitive perception, what seems obvious and meaningful, and pragmatic considerations, leading to inconsitent hierarchies.
+The second major issue is the absence of an integrative framework. When contemplating the dynamic structures in our universe, we often categorize and assign hierarchies -- such as physical domain, biological organisms, the mind, society, informational ecosystems, and so on. These categories appear significant to us, but all these distinctions are somewhat arbitrary because they are based on intuitive perception, what seems obvious and meaningful, and pragmatic considerations, leading to inconsitent hierarchies.
 
 Overcoming these two main issues could help in better applying and accepting Universal Darwinism across various non-biological systems. Let's consider both in detail:
 ** Algorithmic Nature of Evolution
@@ -313,7 +313,7 @@ This dynamism is substrate-independent, meaning that the specifics of the system
 Evolution in the Darwinian sense is a [[https://en.m.wikipedia.org/wiki/Self-perpetuation][self-sustaining]] and [[https://en.m.wikipedia.org/wiki/Positive_feedback][self-reinforcing]] loop (akin to a "virtuous cycle"). This loop consists of interdependent stages, where each stage circularly depends on the others. Each repetition creates and reinforces the conditions for the other stages to function, and so on. Hence, it is working /recursively/ at multiple scales.
 *** General Principles of Evolutionary Dynamics
 
-What are the necessary principles of Darwinian Evolution? I'm using generic terms to minimize substrate-specific connotations (e.g., replacing "inheritance" with "Retention"):
+What are the necessary principles of Darwinian Evolution? I'm using generic terms to minimize substrate-specific connotations (e.g., replacing "inheritance" with "Retention", because "inheritrance" describes just a mere implementation detail rather than the general concept):
 **** Variety
 Variety is inevitable, as there can never be perfect equality. It is intrinsic to complex systems and not merely a collection of deviations.
 **** Repetition

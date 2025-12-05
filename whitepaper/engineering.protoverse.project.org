@@ -1,4 +1,4 @@
-# Created 2025-12-03 Wed 14:22
+# Created 2025-12-04 Thu 19:17
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -31,7 +31,7 @@ WORK IN PROCESS -- The aim here is to think more about the practical aspects: mo
 The Protoverse is not made from things (like particles or objects and such), but /processes/. What we typically conceive of as entities ("things") are actually temporary aggregations of Processes and their interactions -- it's Processes all the way down. The Protoverse is relational, co-evolving (darwin-style) and [[https://en.wikipedia.org/wiki/Background_independence][backdrop-independent]]; hence there's no a-priori conception of time, space or gravity; although from Processes interacting on certain scales, constants could emerge, resembling a form of "physics".
 
 The prime abstraction is "Process" (with capital 'P'). Through the interaction, uniform primitive Processes build relations and compose, so that higher-order Processes emerge, exhibiting novel properties. The ultimate goal is pioneering open-ended evolution (in the darwinian sense). Processes constantly become their own "computing substrate". That's in principle quite like cellular automata work, where the grid is not a pre-defined "space", but each cell's state at a given step is determined by the states of its neighboring cells at the previous step, so that the structure of the grid is inherently linked to the operation of the automaton (this aspect may be overlooked when playing with cellular automata within apps, where cellular automata are always displayed in an area of a certain size).
-* Dynamic Structures
+* Models of Computation & Structures
 
 The Protoverse needs to run on digital computers, since we don't have anything more sophisticated yet at scale. Digital computers operate inherently and efficiently with discrete structures -- so it would be generally reasonable to stick to discrete structures.
 
@@ -52,7 +52,7 @@ The idea here is to put aside structures like cellular automata and hypergraphs,
 ** Language Oriented Programming (LOP)
 
 The idea here is to have a language representation that is subject to be utilized and evolved directly by the Protoverse Processes ("data is code, code is data"). Everything then would happen at the language level, abstracting from stuff like functions, data structures, graphs, etc. That would certainly add semantic denseness, and brings a clear distinction between high-level design and lower-level implementation. The feedback loop involving design and implementation would have to be very tight, otherwise issues could show up that lead to frequent pivots.
-*** Adopt, Adapt or Design a Process Calculus
+** Adopt, Adapt or Design a Process Calculus
 
 A newcomer on this list: As per my current understanding, designing the Process abstraction and dynamics would result in something like a [[https://en.wikipedia.org/wiki/Process_calculus][process calculus]] anyway, just "ad hoc, informally specified, bug-ridden and half-assed".
 
@@ -61,11 +61,13 @@ Process calculi are considered models of computation; they are formal systems to
 The idea behind process calculi seems quite appealing, e.g. [[https://en.wikipedia.org/wiki/%CE%A0-calculus][π-calculus]]: there are /anonymous processes/ that communicate via named (or typed) channels. These channels can be passed around by processes through other channels, and this "mobility" allows dynamic reconfiguration of the process network. Processes can be composed into larger ones, which maps nicely to the idea of "higher-order" Protoverse Processes. Typed channels might represent various "dimensions" for newly evolved means of relations (and interactions) of higher-order Processes.
 
 There's a chance that I might conflate something and be mistaken with what I said above, since I've looked into process calculi only superficially as of yet. Before deep-diving, it seems rather sensible to advance the design of the Process abstraction by own reasoning first, and reconcile afterwards.
-**** Bigraphs (Robin Milner)
+*** Bigraphs (Robin Milner)
 
 Today I learned that the idea of using channels as "dimensions" is central to /[[https://en.wikipedia.org/wiki/Bigraph][bigraphs]]/, which are considered a "generalization of the π-Calculus" -- I'm not quite sure why Milner's bigraph is conisdered a generalization, to me it looks like a special application. Bigraphs consist of two distinct but connected graphs: one modeling the connectivity between processes (communication links) and the other modeling their placement within a spatial or hierarchical context (location).
 
 My intuition suggests that this would be equivalent to using channels of two distinct types, one type representing the hierarchical context and the other representing connectivity. Such a typed approach could accommodate more than just two dimensions. However, I might be confusing things here; the key point seems rather that Robin Milner explicitly defined the formal specification and interactions for each of these two connected graphs, which provides a rigurous formalism.
+** Interaction Nets (Interaction Combinators)
+Stumbled upon "[[https://www.semanticscholar.org/paper/Interaction-Combinators-Lafont/6cfe09aa6e5da6ce98077b7a048cb1badd78cc76][Interaction nets]]" as a distributed model of computation which is [[https://github.com/HigherOrderCO/HVM][implemented as the HVM]], a parallel virtual machine behind the Bend language ([[https://docs.google.com/viewer?url=https://raw.githubusercontent.com/HigherOrderCO/HVM/main/paper/HVM2.pdf][paper]]).
 * Requirements
 
 The following requirements are roughly sorted from most immediate neccesity to long-term concerns (optimizations):
@@ -87,7 +89,7 @@ However, early stages or specific experiments within the Protoverse could benefi
 
 The primary langage used for building the model should enable to express the fundamental dynamics as closely and naturally as possible in order to minimize context-switching. So what are we looking for?
 
-First of all, we might want the language that is concise and clean; resource allocation should be abstracted away, so manual memory management, but also no explicit management of concurrent and parallel execution, as far as possible.
+First of all, we might want the language that is concise and clean; resource allocation should be abstracted away, so no manual memory management, but also no explicit management of concurrent and parallel execution, as far as possible.
 
 It must lend itself to high-level abstractions, and various sorts of abstractions too; e.g. [[https://en.wikipedia.org/wiki/Metalinguistic_abstraction][metalinguistic abstraction]] -- because it seems quite unlikely to achieve a close fit of metaphysics and code with a general-purpose programming language alone, but rather to design and implement a DSL (that may resemble some form of process calculus, for instance).
 
@@ -96,7 +98,7 @@ Certain programming paradigms seem to fit, so it would be nice to have access to
 There will be no distinct formal specification of the Protoverse model (or put differently, the code will be the specification), hence an exploratory programming style seems like the sanest approach to model the Protoverse dynamics. That sets the focus on primarily interactive use of a language or computing environment.
 
 Pivoting quickly into different directions must be feasible, so we also want an emphasis on refactoring capabilities.
-** Conversational Programming
+** Prototyping / Conversational Programming
 
 The benefit hinges on the anticipated modus operandi of the Protoverse:
 
@@ -106,20 +108,26 @@ The benefit hinges on the anticipated modus operandi of the Protoverse:
 The help of a VM- or image-based runtime and language that allows to experiment with the system and to tweak it at runtime would greatly enhance understanding and development efficiency. Unfortunately, this rules out statically typed languages because of their sharp distinctions between programming time, compile time and run time.
 
 Since I asssume the more interesting stuff is likely to happen the longer the Protoverse runs, the ability to step back and forth through the execution history might be desired, too (straightforward state-recreation, or actually circumventing the need for state recreation to begin with).
+
+Prototyping-friendly also means predictable and well-balanced execution profile of the runtime, that doesn't chug on un-optimized and naive ad-hoc code -- e.g. huge data structures, heavy allocation or deep recursion.
 ** Massively Interacting Computation
 
 A lot of stuff is going to happen in realtime. Eventually I'm expecting many billions of smallish, interacting computations. In the early stages, where the focus is on modelling the Process abstraction and dynamics, the capacity to handle a couple of millions might be enough, which should be achievable in the cloud, on a small Rasperry Pi cluster or even a bunch of laptops.
 
-Before we come to concurrency and parallelism: the concepts are often mixed up, and understandably so -- [[https://wiki.haskell.org/index.php?title=Parallelism_vs._Concurrency][here's an explanation]] and [[https://www.classes.cs.uchicago.edu/archive/2017/spring/22300-1/lectures/ConcurrencyParallelism/ConcurrencyParallelism.pdf][here]]. Parallelism is the thing that we really want.
+Before we come to concurrency and parallelism: the concepts are often mixed up, and understandably so -- [[https://wiki.haskell.org/index.php?title=Parallelism_vs._Concurrency][here's an explanation]] and [[https://www.classes.cs.uchicago.edu/archive/2017/spring/22300-1/lectures/ConcurrencyParallelism/ConcurrencyParallelism.pdf][here]].
 
 The crux with current architectures is that parallelism is tied to the number of /physical/ cores available. Regular CPUs have a dozen up to a couple of dozen cores, GPUs around 16,000 cores. The ideal thing to have would be something like "real-time-soft-scalable" parallelism, but in practical terms with current architecture we need both, the "normal" interleaving or time-slicing concurrency and true parallelism.
 *** Concurrency
 
 Since /massive/ concurrency is a basic need (dealing with a lot of things), this will practically rule out concurrency solely based on "heavyweight" kernel threads.
 
-There are basically two facilities in common use that fit massive concurrency: Either [[https://en.wikipedia.org/wiki/Actor_model][actors]] (the Erlang model) or CSP-style channels (the Golang model) -- [[https://wingolog.org/archives/2016/10/12/an-incomplete-history-of-language-facilities-for-concurrency][breakdown here]]. My first naive idea is that the primitive Protoverse Processes and user-level threads are mapped one-to-one, where the user-level threads are scheduled by a runtime and multiplexed to kernel threads.
+There are basically two facilities in common use that fit massive concurrency: Either [[https://en.wikipedia.org/wiki/Actor_model][actors]] (the Erlang model) or CSP-style channels (the Golang model) -- [[https://wingolog.org/archives/2016/10/12/an-incomplete-history-of-language-facilities-for-concurrency][breakdown here]].
 
-Here is to note that Protoverse Processes compose into higher-order Processes, which means that more complex higher-order Protoverse Processes automatically get more "computational power" (however, the "power" won't increase entirely linear, of course -- there'll be communication overhead, amongst other factors).
+My first naive idea was to map primitive Protoverse Processes and runtime threads one-to-one, where the runtime threads are scheduled by a runtime and multiplexed to kernel threads.
+
+Here is to note that Protoverse Processes compose into higher-order Processes, which means that way higher-order Protoverse Processes would get automatically more "computational power" (however, the "power" won't increase entirely linear, of course -- there'll be communication overhead, amongst other factors).
+
+However, to model Protoverse Processes (the "Entities" so to speak) as runtime threads/processes (e.g. lightweight threads or whatever) may lead to scaling issues pretty quickly, so it would rather make more sense to decouple both and model Protoverse Processes as /data/ instead, and use (ephemeral) runtime processes as an abstracted-away layer that merely "carries" or "supports" their interactions.
 **** Actor Model vs. Process Calculi
 
 *[[https://en.wikipedia.org/wiki/Process_calculus][Process calculi]]* are interesting for the sake of pondering about Process dynamics, as they are languages for modeling concurrent computation.
@@ -128,7 +136,7 @@ There's a range of process calculi: [[https://en.wikipedia.org/wiki/%CE%A0-calcu
 
 As far as I know, there are no "production-ready" performant languages that implement π-calculus, and π-calculus wouldn't be feasible for distributed systems anyway. However, there are at least two implementations of Join-calculus: [[https://en.wikipedia.org/wiki/JoCaml][JoCaml]] (in OCaml) and [[https://github.com/Chymyst/chymyst-core/][Chymyst]] (in Scala, chemical machine) -- both research projects and abanoned. More common are CSP implementations as mentioned before (Communicating Sequential Processes), e.g. concurrent ML, Clojure's core.async or Go's go-routines; but even though CSP is conceptually related, its capabilities are quite different as CSP lacks the dynamic parts that makes π-calculus and Join-calculus interesting modeling tools.
 
-The *[[https://en.wikipedia.org/wiki/Actor_model][actor model]]* [[https://en.wikipedia.org/wiki/Actor_model_and_process_calculi][differs from process calculi]] in several aspects, for instance actors are based on the idea of individual entities; they are not anonymous, but messages are adressed via unique identifiers. The Actor Model is "modeled after physics" (or an understanding thereof) and very identity-centered. At first glance, this seems to run against the process-relational [[file:metaphysics.protoverse.project.org][Protoverse metaphysics]], where "identity" is a rather fluid concept.
+The *[[https://en.wikipedia.org/wiki/Actor_model][actor model]]* [[https://en.wikipedia.org/wiki/Actor_model_and_process_calculi][differs from process calculi]] in several aspects, for instance actors are based on the idea of individual entities; they are not anonymous, but messages are adressed via unique identifiers. The Actor Model is "modeled after physics" (or a simplified understanding thereof) and very identity-centered. At first glance, this seems to run against the process-relational [[file:metaphysics.protoverse.project.org][Protoverse metaphysics]], as I don't treat "identity" as a "given" or first-order concept, but as as snapshot-like, discretized approximations of relational, dynamic and fluid Processes.
 
 However, we could implement something resembling π-calculus or Join-calculus by a thin layer on top of an existing actor model implementation -- interestingly, that has been done before: see [[https://github.com/rhumbertgz/jerlang][JErlang]], which implements Join-calculus. Such an implementation based on the yet-to-design Protoverse specifcs could then serve as a DSL to express the Protoverse Process dynamics.
 *** Task-Parallelism vs. Data-Parallelism
@@ -145,13 +153,15 @@ Generally speaking, encapsulation and locality are good indicators for how effec
 In any case, it makes sense to have straightforward GPU computing readily available if needed (OpenCL, CUDA or HIP).
 ** Support for Deep Reccursion
 
-Recursion will play a key role (evolutionary dynamics at multiple Nested Scales of Complexity). Specifically, more complex recursive algorithms who use the intermediate values returned by successive recursive calls can't always be expressed via recursion in tail-call position.
+Recursion will play a conceptual role (evolutionary dynamics at multiple Nested Scales of Complexity).
 
 "Never send a human to do a machine's job." ---Agent Smith about TCO.
 
-However, it's generally possible to explicitly manage a separate stack as a heap-allocated data structure that collects the outcome of the recursive calls, instead of relying on the call stack, while the stack management logic could be hidden with helper macros, keeping the code clean and readable; or use continuation-passing-style (meh).
+Ok, obligatory mentioning tail call optimization ist just there for the laugh. Actually it's not so much about tail call optimization, but conveniently handling non-tail-recursion -- because more complex recursive algorithms who use the intermediate values returned by successive recursive calls can't always be expressed via recursion in tail-call position.
 
-While both workarounds are pragmatic, they come with a cognitive overhead and belong to the realms of optimization. Hence, it would be great to have an unlimited or dynamically managed call stack depth to prevent stack overflows, so that we could write recursive procedures in a naive style for convenience, specifically during prototyping.
+It's generally possible to circumvent stack overflow by explicitly managing a separate stack as a heap-allocated data structure that collects the outcome of the recursive calls, instead of relying on the call stack -- while the stack management logic could be hidden with helper macros, keeping the code clean and readable; or by using continuation-passing-style, and several other hacks.
+
+While those workarounds are pragmatic, they come with some cognitive overhead and belong to the realm of optimization. Hence, it would be great to have an "unlimited" or dynamically managed call stack depth (some languages allocate call frames to the heap instead) to prevent stack overflows, so that we could write recursive procedures in a naive style for convenience, specifically during prototyping.
 ** Scalability
 
 Open-endedness is fundamentally about scaling.
@@ -165,7 +175,7 @@ First and foremost, the Protoverse will undergo increasing counsumption of resou
 Since I anticipate the Protoverse rather as a forever-running application than a batch computation (open-ended quasi-darwinian evolution), I lean towards a distributed, horizontal scaling model with redundant nodes, that runs in the cloud, and eventually might even run on commodity hardware (e.g. a heterogenous peer-to-peer network): much like BOINC, or even like Ethereum or Bitcoin.
 ** State Management, Pruning and Data Compression
 
-We probably have to consider resource-saving techniques earlier in the development process; also taking into consideration, how much of Protoverse history will have to be kept around. We have to consider if a Markovian approach (history-less) would be possible, and where.
+We probably have to consider resource-saving techniques earlier in the development process; also taking into consideration, how much of Protoverse history will have to be kept around.
 
 Clever resource management plays a larger role if he Protoverse takes the path of being implemeted as a long-running application. There could be intrinsic selection (as a part of the Protoverse dynamics) that effectively prunes certain Nested Scales Of Complexity when it is highly probable that nothing interesting happens at these; e.g. when they turn out random and too boring and therefore "non-viable". On the other side -- even inconspicuous, boring dynamics can turn out to be further influential for evolution, and the extent may be unforeseeable.
 ** Computation by Need
@@ -179,16 +189,17 @@ I've got a feeling that infinite structures for data representation (open-endedn
 Theoretically, might turn out practical to follow such an approach to save computing resources; but it might also turn out extremely impractical (piling up thunks). Any way, it deserves consideration and further thought.
 ** Portability
 
-Unforseen complications may likely require to switch certain parts of the implementation during development, e.g. the runtime. It would make sense to write the model in a language that could be ported to something else without too much effort.
+Unforseen complications may likely require to switch certain parts of the implementation during development, e.g. the runtime. It would make sense to write the model in a language that could be ported/plugged into something else without too much effort.
 
-The first what comes to mind are C and C++. But these are very low-level or and ugly, and I'm pretty sure I wouldn't come very far with one of these as a modeling language. But there are other aspects:
+The first what comes to mind are C and C++. But these are very low-level, and I'm pretty sure I wouldn't come very far with one of these as a modeling language. But there are other aspects:
 
 a) Use a high-level language that compiles to either a low-level language or can target multiple backends; for instance, there are a few Scheme dialects that target various platforms, and a growing number of languages target WASM, which could be an interesting runtime, especially with [[https://lunatic.solutions/][projects like this]].
-b) Adher to portable code, that means following a standard closely (e.g. R6RS for the Scheme language).
+b) Adher to portable code, that means following a standard closely (e.g. R6RS for the Scheme language -- ok that's quite a bad example, but you get the idea).
 ** Observability: Visualization, Analysis and Profiling
 
-Meta-functionality is complicated stuff and imposes overhead that eats away development resources; it's quite boring but neccessary.
+Meta-functionality is complicated stuff and imposes overhead that eats away development resources; it's quite boring but necessary.
 
+- Much visualization stuff has been built in JavaScript.
 - So there should be (ideally native) frameworks/libraries available that we can use for data visualization and analysis.
 - Same for performance profiling and tweaking, which is often readily available when building on top of a large-ecosystem virtual machine/platform, such as the BEAM or JVM.
 ** Interfacing With Other Ecosystems
@@ -196,7 +207,7 @@ Meta-functionality is complicated stuff and imposes overhead that eats away deve
 It might turn out beneficial if a bigger language ecosystem is within reach, either by directly building on that very ecosystem/platform, or via straightforward interop. This might be useful for analysis, visualization, measuring; or to offload heavy computations if they cannot be implemented efficiently in the primary language/runtime; or to use specific scientific libraries. Possible targets are the usual suspects: Rust, C, C++, but also Java and Python.
 * Programming Environment and Language
 
-The following assessment is about choosing the primary platform/language for modeling and implementation. There are gradual pros/cons which are rather tricky to gauge at this point, not knowing in advance what requirements will turn out more or less important over the course of the project; and there are absolute dealbreakers too.
+The following assessment is about choosing the primary platform/language for prototyping, modeling and implementation as much as possible. There are gradual pros/cons which are rather tricky to gauge at this point, not knowing in advance what requirements will turn out more or less important over the course of the project; and there are absolute dealbreakers too.
 ** Conventional Programming Languages and Platforms
 
 *** Erlang Platform (BEAM)
@@ -217,7 +228,7 @@ The following assessment is about choosing the primary platform/language for mod
 - Practical cluster size up to ~150 nodes, larger clusters possible with hierarchical clustering and other trickery (see also theoretical [[https://www.erlang.org/doc/system/system_limits.html][system limits]]);
 - Large-scale simulations: [[https://www.sciencedirect.com/science/article/abs/pii/S0167739X17311810][Urban traffic]]
 
-/Sentiment: The question would be if the Protoverse model will eventually translate well to the actor model -- on the BEAM, everything is done via actors, there's nothing else. Physical simulations, as far as they might be related, are usually numeric where each data point affects the others./
+/Sentiment: The question would be if the Protoverse model will translate well to the actor model -- on the BEAM, everything is done via actors, there's nothing else. Physical simulations, as far as they might be related, are usually numeric where each data point affects the others./
 **** BEAM: Erlang language
 
 - Simple, functional actor-oriented language with pervasive pattern matching;
@@ -232,7 +243,7 @@ The following assessment is about choosing the primary platform/language for mod
 - No easy reusing libraries from the larger Elixir ecosystem;
 - Collab opportunities: Engaged community, focus on infrastructure, industrial-engineering-mindset;
 
-/Sentiment: Erlang has no Lisp-style macros, but I think I will need them. And there are some rocks on the road to flowy interactive, explorative programming./
+/Sentiment: Erlang is quite a small/simple language. It has no Lisp-style macros, but I think metaprogramming will be useful. And there are some rocks on the road to flowy interactive, explorative programming. The Erlang shell is quite powerful, but designed for maintenace/admin stuff rather than interactive development./
 **** BEAM: Elixir language
 
 - Functional actor-oriented language with pervasive pattern matching;
@@ -251,7 +262,7 @@ The following assessment is about choosing the primary platform/language for mod
 - Most 3rd-party documentation and howtos are related to the Phoenix web framework and web development;
 - Collab opportunities: Community and ecosystem centered around web backend and business apps; building stuff outside of this domain is slooowly taking off (e.g. machine learning);
 
-/Sentiment: I find Elxir rather inconsistent, verbose and a bit clumsy -- syntax-wise, mostly. There are quite a lot WTFs, but Elixir is more interactive-friendly and has at least compile-time macros./
+/Sentiment: I find Elxir rather inconsistent, verbose and clumsy -- syntax-wise, mostly. There are quite a lot WTFs, but Elixir is more interactive-friendly and has at least compile-time macros./
 **** LFE (Lisp Flavored Erlang)
 
 - Simple actor-oriented Lisp with pervasive pattern matching;
@@ -282,22 +293,25 @@ The following assessment is about choosing the primary platform/language for mod
 - There's a tiny library ecosystem;
 - JIT compiler;
 - [[https://www.gnu.org/software/guile/manual/guile.html#Stack-Overflow-1][Unlimited stack depth for Scheme code]], TCO available;
-- Concurrency and multicore [[https://github.com/wingo/fibers/wiki/Manual#13-parallelism][parallelism]] via [[https://github.com/wingo/fibers][fibers]] ([[https://github.com/wingo/fibers/wiki/Manual][manual]]), Concurrent ML / CSP style, preemptive scheduler;
+- Concurrency and multicore [[https://github.com/wingo/fibers/wiki/Manual#13-parallelism][parallelism]] via [[https://github.com/wingo/fibers][fibers]] ([[https://github.com/wingo/fibers/wiki/Manual][manual]]), Concurrent ML / CSP style, preemptive(?) scheduler;
 - Distributed: [[https://spritely.institute/goblins/][Goblins]] actor-framework in the making ([[https://spritely.institute/files/docs/guile-goblins/0.14.0/index.html][docs]]), for P2P;
-- Overall performance for CPU-heavy tasks is unclear right now;
+- Performance looks well-balanced, and Guile digests allocation-heavy surprisingly well -- even though v3.0.10 has still the old garbage collector;
 - Collab opportunities: GNU and Scheme enthusiasts, academic;
 
-/Sentiment: Due to the Fibers library and its scheduler, Guile is quite interesting; but I have no idea how it compares to Erlang, for instance./
+/Sentiment: Due to the Fibers library and its scheduler, Guile is quite interesting, and it supports parallel execution (multi-threading) out-of-the-box. My own benchmarks have shown that Guile seems to run reasonably fast even with naive/un-optimized but demanding code, which is nice for prototyping./
 *** Racket
 
 - Clean, higly general and the most expressive I guess;
 - Racket is great for prototyping abstractions and algorithms;
 - Full metaprogramming (syntax-rules, syntax-case, defmacro);
 - Built for [[https://en.wikipedia.org/wiki/Metalinguistic_abstraction][metalinguistig abstraction]] (see also [[https://en.wikipedia.org/wiki/Language-oriented_programming][LOP]]);
-- Not so bad for interactive development (in Emacs);
+- Not so bad for interactive development (in Emacs), but much less interactive capabilites than say Common Lisp or Guile Scheme;
 - Various concurrency facilities, green threads;
-- Parallelism: [[https://docs.racket-lang.org/guide/parallelism.html][Places]] looks quite awkward, bolted-on and fully manual;
-- Distributed: has a [[https://git.syndicate-lang.org/syndicate-lang/syndicate-rkt/src/branch/main/syndicate][Syndicated Actors]] implementation and a [[https://docs.racket-lang.org/goblins/][Spritely Goblins]] implementation that's behind the canonical one; both are experimental.
+- Parallelism: [[https://docs.racket-lang.org/guide/parallelism.html][Places]] looks quite limiting;
+- Racket v9.0 [[https://blog.racket-lang.org/2025/11/parallel-threads.html][introduced parallel threads]]
+- Distributed: Places are also [[https://docs.racket-lang.org/distributed-places/index.html][used for distribution]]; further there are a [[https://git.syndicate-lang.org/syndicate-lang/syndicate-rkt/src/branch/main/syndicate][Syndicated Actors]] implementation and a [[https://docs.racket-lang.org/goblins/][Spritely Goblins]] implementation that's behind the canonical one; both are experimental.
+
+/Sentiment: Racket seems quite interesting in principle, but Racket is opinionated against interactive use and incremental compilation/evaluation, which Guile offers. Multi-threading in Racket is new and only low-level facilities exist at this point, while Guile has it for longer./
 *** Gambit / Gerbil Scheme
 
 - "Distributed" actor-model centric Scheme implementation based on Ganbit Scheme
@@ -311,11 +325,11 @@ The following assessment is about choosing the primary platform/language for mod
 - Multiprocessor-parallelism (SMP) [[https://github.com/mighty-gerbils/gerbil/issues/837][not working yet]], depends on Gambit Scheme implementation;
 - Built-in concurrency (actor model) based on light-weight Gambit threads;
 - Ad-hoc distributed computing with [[https://cons.io/tutorials/ensemble.html][actor ensembles]];
-- Compiles to C, overall performance on CPU-heavy tasks probably better than Guile's;
+- Compiles to C, overall performance on CPU-heavy tasks supposedly better than Guile's;
 - Small documentation, but gives a well-rounded overview;
 - Collab opportunities: Scheme enthusiasts, academic;
 
-/Sentiment: Gerbil Scheme is a promising project but in a very early stage (v18.0), and doesn't support multiple CPU cores. The interactivity and Emacs integration isn't comparable to Guile's, e.g. documentation or code autocompletion./
+/Sentiment: Gerbil Scheme is a promising project but in a very early stage (v0.18.0), and doesn't support multiple CPU cores. The interactivity and Emacs integration isn't comparable to Guile's, e.g. documentation or code autocompletion./
 *** Julia
 
 - The only conventional imperative language considered so far;
@@ -362,7 +376,7 @@ The following assessment is about choosing the primary platform/language for mod
 - Purely functional code is good for parallelization (in principle); not sure how actor model message passing (wich is basically IO), the type system and purity go together; it might turn out very awkward, basically most of the code will live in the IO monad;
 - Collab opportunities: engaged community, FP-enthusiasts;
 
-/Sentiment: I'm afraid of lazy-per-default, that reasoning about resource usage may become too complicated and a lot time is spent on fighting Haskell's opinions. Seems no great choice for explorative programming, except maybe you work basically on the type level./
+/Sentiment: I'm afraid of lazy-per-default, that managing resource usage may become too complicated and a lot time is spent on fighting Haskell's opinions. Seems no great choice for explorative programming, except maybe you work basically on the type level./
 *** NIM
 
 - Multi-paradigm, expressive and low-noise;
@@ -380,14 +394,15 @@ The following assessment is about choosing the primary platform/language for mod
 - The language should be kinda stable, but then there are a lot of deprecations and even a rewrite of the compiler going on;
 - Collab opportunities: Even though the language doesn't draw a lot of attention, there's already a very diverse landscape of libraries and projects written in NIM, and attracts even academics.
 *** Lua
-- Simple, versatile and multi-paradigm, super expressive
+
+- Simple, versatile and multi-paradigm, quite expressive
 - No ad-hoc inspection of values or data structures (well, tables) - coming from Lisp languages, this feels like driving with eyes closed;
-- Some gotchas, e.g. discarding arguments when functions are applied to too many arguments, the local vs. global thing, and verbosity
-- There are workarounds, e.g. Fennel as a lispy language on top of Lua;
+- Some gotchas, e.g. discarding arguments when functions are applied to too many arguments, the local vs. global thing, and verbosity;
+- There are workarounds, e.g. [[https://fennel-lang.org/][Fennel as a lispy language]] that transpiles to Lua but keeps Lua semantics;
 - Has tail call optimization, which is nice;
+- LuaJIT runtime for high performance;
 - Single-core concurrency only;
-- I couldn't figure out how to parallelize Lua programs in reasonable time
-- There are some attempts to make it "multicore", but not maintained;
+- There are some attempts for multithreading, [[https://github.com/LuaLanes/lanes][the one under active development is LuaLanes]];
 *** JVM: Clojure
 
 - Functional paradigm, in principle a nice and clean take on Lisp;
@@ -398,7 +413,7 @@ The following assessment is about choosing the primary platform/language for mod
 - Optional type system [[https://github.com/typedclojure/typedclojure][Typed Clojure]] (?); [[https://clojure.org/about/spec][clojure.spec]] isn't a type system but for runtime validation;
 - Lazy sequences;
 - Concurrency: Several concurrency abstractions; [[https://www.youtube.com/watch?v=yJxFPoxqzWE][core.async]] implements [[https://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP-style]] concurrency and allows channels to be passed as values; but memory is shared (unlike Erlang's processes);
-- I ran into various errors when I did trivial benchmarks involving 100k concurrent computations via core.async "go blocks"; depending on which concurrency facility used, I ran constantly into some limitations when it came to large numbers of concurrent operations;
+- I ran into various errors when I did naive benchmarks involving 100k concurrent computations via core.async "go blocks", depending on which concurrency facility used;
 - Portability: Clojure targets several host platforms officially, e.g. JVM, JavaScript, CLR; and there are inofficial implementations, e.g. Erlang/Beam, but these are highly experimental;
 - Observability: JVM has lots of profilers and tools;
 - Clojure has a non-copyleft license (Eclipse License)
@@ -412,11 +427,11 @@ The following assessment is about choosing the primary platform/language for mod
 - Very moldable to the domain via metaprogramming (DSLs);
 - Algebraic data types available, and there is also [[https://github.com/coalton-lang/coalton][Coalton]], an ML-style, internal DSL with type classes);
 - Conversational programming at the running system is great for prototyping/exploration;
-- Image-based: The running program can be paused, suspended, debugged, modified and continued without losing state;
+- Image-based: The running program can be paused, suspended, debugged, modified and continued without losing state -- this is what really sets CL apart;
 - The state of a running image can be dumped and restored, but that won't work out-of-the box for a distributed system;
 - Great Emacs integration, simple tooling (sly, quicklisp, asdf and roswell)
 - Concurrency: [[https://github.com/mdbergmann/cl-gserver][Sento]] actor framework is the most promising; and there are [[https://github.com/dbmcclain/Lisp-Actors][Lisp-Actors]] or [[https://github.com/zkat/chanl][ChanL]]. Most concurrency facilities seem to rely directly on OS-threads instead of something like "lightweight processes", though.
-- No conurrent garbage collector but stop-the-world;
+- No concurrent garbage collector but stop-the-world;
 - There are [[https://github.com/marcoheisig/Petalisp][Petalisp]] (data parallelism), Lparallel and [[https://github.com/marcoheisig/cl-mpi/][OpenMPI bindings]] (likely an overkill, see [[https://www.open-mpi.org][OpenMPI]]);
 - SBCL is performant (Java ballpark);
 - Low-level access to the language itself, plenty of optimizations;
@@ -496,13 +511,13 @@ The actor model - available at the language level - makes it convenient to write
 
 The BEAM is not very performant for CPU-bound-, but for IO-bound computing. E.g. Guile turns out twice as fast as Elixir (benchmark: sequential, non-tail-recursive algorithms on binary trees with ~67 million nodes). However, CPU-intensive parts could be ported to high-performance implementations where necessary.
 
-The BEAM is rather "infrastructure" and "industry" centred, and its languages require quite a bit of ceremony and overall, the framework character (OTP) shines through - it's rather "translate your problem to OTP" rather than "mold your language to fit the problem". That feels a bit clunky for ad-hoc experimentation -- on the other hand, people are capable to write quite sophisticated things in something like C++. Probably I should take a second look at LFE though.
+The BEAM is rather "infrastructure" and "industry" centred, and its languages require quite a bit of ceremony. Overall, the framework character (OTP) shines through - it's rather "translate your problem to OTP" rather than "mold your language to fit the problem". That feels a bit clunky for ad-hoc experimentation -- on the other hand, people are capable to write quite sophisticated things in something like C++. Probably I should take a second look at LFE though.
 **** 2. Guile Scheme
 
 Guile provides high-level concurrency facilites (fibers in conjunction with a work-stealing scheduler) and a channel-based concurrency model (like concurrent ML or Golang). Workload can be spread over multiple cores without manual thread management.
 
 It may be surprising, but Guile Scheme looks quite feasible as a candidate for the primary language, because it has become much more than just an "extension language" for "scripting applications written in C". For instance, it seems to handle large data structures and hefty allocation quite well -- out-of-the-box, in the REPL.
 
-The GC (as of version 3.0.10) seems to need less attention compared to SBCL's current GC (version 2.5.10). When I did some benchmarks with deep non-tail-recursion on binary trees with ~67 million nodes (sequential), Guile turned out 1.5 times faster than SBCL, which spent 3/4 of the time with GC. Overall, Guile feels well balanced and therefore quite fast, suited for writing code ad-hoc without ceremony.
+The GC (as of version 3.0.10) seems to need less attention compared to SBCL's current GC (version 2.5.10). When I did some benchmarks with deep non-tail-recursion on binary trees with ~67 million nodes (sequential), Guile turned out 1.5 times faster than SBCL, which spent 3/4 of the time in GC. Overall, Guile feels well balanced and therefore quite fast, suited for writing code ad-hoc without ceremony.
 
 Guile's focus is less on infrastructure (like the BEAM languages), and more on expressivity (and exploration), which might be beneficial in the early stages. Nevertheless, there's also stuff going on with distributed computing (e.g. Spritely Goblins).
