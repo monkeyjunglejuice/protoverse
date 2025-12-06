@@ -1,4 +1,4 @@
-# Created 2025-12-05 Fri 16:04
+# Created 2025-12-05 Fri 18:14
 #+options: 
 #+title: Modeling The Computational Universe
 #+date: <2024-09-27 Fri>
@@ -28,19 +28,19 @@ NOT STARTED YET -- I'm going to work on the model after the metaphysical framewo
 #+toc: headlines 3
 * Synchronization / Desynchronization
 
-One of the worries and challenges when it comes to concurrent and/or parallel computation is the synchronization of outcomes. I read quite often about simulations progressing in "ticks" -- "rendering the world" in discrete steps. I don't know if that is really common practice or just in toy-like simulations, but this idea has to be abandoned. Why?
+One of the worries and challenges when it comes to concurrent and/or parallel computation is the synchronization of outcomes. I read quite often about simulations progressing in "ticks" -- "rendering the world" in discrete steps. I don't know if that is really common practice or just in toy-like simulations and cellular automata, but this idea has to be abandoned.
 
-Well first, the Protoverse isn't supposed to be a "simulation" to begin with, but the instatiation of an abstract model. It's not going to simulate /something else/ -- but will be "the real thing" itself.
+Why? Well first, the Protoverse isn't supposed to be a "simulation" to begin with, but the instatiation of an abstract model. It's not going to simulate /something else/ -- but will be "the real thing" itself.
 
 And if we're being honest (and assume that relativity is a thing), then we must acknowledge there's no real synchronization in our universe either -- it just an illusion of our daily experience (low-speed local human experience plus our limited spatial scale). Just a simple example: There is no "at this moment" on the moon while you're on Earth. The striving, longing for synchronization is real, no doubt -- but can never be reached. Maybe that nurtures our obsession with synchronicity.
 
-Global time doesn't exist in reality, violates the process-relational Protoverse metaphysics (no background time, no background space -- these are emergent phenomena), and regarding efficient computation, synchronous progression is probably the worst possible decision, as it kills parallelization and scaling. Maybe the universe is so efficient because it's inherently asynchronous.
+Ok to sum it up: global time doesn't exist in reality and wouldn't make sense in the Protoverse either; it violates the process-relational Protoverse metaphysics (no background time, no background space -- these are emergent phenomena), and regarding efficient computation, synchronous progression is probably the worst possible decision, as it kills parallelization and scaling. Maybe the universe is so efficient because it's inherently asynchronous.
 
 Ok, that out of the way -- what does it mean for our model?
 - Only partial orders, not total orders
 - Causality becomes the foundation of consistency
-- Need to "synchronize" only what actually interacts
-- Everything else remains independent
+- "Synchronize" only what actually interacts
+- Everything else remains decoupled and can run in parallel
 * The Abstract Process
 
 /This is about [[file:metaphysics.protoverse.project.org][Process (metaphysics]]); not to confuse with process or thread (computation)./

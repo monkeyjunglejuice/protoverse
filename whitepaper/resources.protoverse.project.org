@@ -1,4 +1,4 @@
-# Created 2025-12-03 Wed 15:09
+# Created 2025-12-06 Sat 18:54
 #+options: 
 #+title: Relevant Books, Papers and Articles
 #+date: <2024-09-11 Wed>
@@ -60,6 +60,8 @@ This list is currently in the making and not exhaustive.
 - [[https://sferics.idsia.ch/pub/juergen/zuserechnenderraum.pdf][Calculating Space]] (Konrad Zuse): The Classic on automata theory and the computational universe.
 
 - [[https://www.amazon.com/Communicating-Mobile-Systems-Robin-Milner/dp/0521658691][Communicating and Mobile Systems: The π-Calculus]] (Robin Milner): π-Calculus is basically a process algebra that might be inspiring for modeling the Protoverse Process dynamics (practical alternatives: Join Calculus and Actor Model).
+
+- [[https://hal.science/file/index/docid/96280/filename/processes.pdf][On Differential Interaction Nets and the Pi-Calculus]] (Thomas Erhard and Olivier Laurent) Encoding Pi-Calculus (high-level) as Interaction Nets (low-level).
 
 - [[https://groups.seas.harvard.edu/courses/cs252/2016fa/13.pdf][The Chemical Abstract Machines (CHAM): Solutions to Model Concurrency]] (Lily Tsai): Join-Calculus goes beyond π-Calculus, depicting computations as "reactions", which aligns in principle with how I think about interacting Protoverse Processes of various orders. Curiosity: the "brownian motion" (mixing in order to provoke reactions).
 
