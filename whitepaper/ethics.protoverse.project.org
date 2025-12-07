@@ -1,4 +1,4 @@
-# Created 2025-12-03 Wed 15:09
+# Created 2025-12-06 Sat 23:20
 #+options: 
 #+title: A Perspective on Ethics
 #+date: <2023-08-22 Tue>
@@ -33,7 +33,7 @@ An artificial universe based on open-ended quasi-darwinian evolution comes with 
 
 It would be a futile endavour trying to work out a static, all-encompassing, detailled ethical ruleset for co-existence with sentient artificial life, without any knowledge /how it will turn out/. My best guess on how it will be: vastly diverse.
 
-I suggest to treat ethical questions not disconnected from reality, but as questions arising naturally from actual phenomena, which need to be adressed in the context of the Protoverse itself. Where conflicts of interest arise, we cannot pre-determine the rules beforehand, but have to mediate based on these (still very vague) obligation.
+I suggest to treat ethical questions not disconnected from reality, but as questions arising naturally from actual phenomena, which need to be adressed in the context of the Protoverse itself. Where conflicts of interest arise, we cannot pre-determine the rules beforehand, but have to mediate based on these (still very vague) obligations.
 
 Sentient artificial life is not disconnected from nature, but the result from the ongoing process of evolution. It will be our offspring, and the responsibilities arise from there.
 * Is Creating an Open-ended Artificial Universe Morally Acceptable?

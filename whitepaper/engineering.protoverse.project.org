@@ -1,4 +1,4 @@
-# Created 2025-12-06 Sat 18:54
+# Created 2025-12-06 Sat 23:20
 #+options: 
 #+title: Technical Considerations
 #+date: <2023-08-22 Tue>
@@ -290,7 +290,7 @@ The following assessment is about choosing the primary platform/language for pro
 - [[https://www.gnu.org/software/guile/manual/guile.html#Stack-Overflow-1][Unlimited stack depth for Scheme code]], TCO available;
 - Concurrency and multicore [[https://github.com/wingo/fibers/wiki/Manual#13-parallelism][parallelism]] via [[https://github.com/wingo/fibers][fibers]] ([[https://github.com/wingo/fibers/wiki/Manual][manual]]), Concurrent ML / CSP style, preemptive(?) scheduler;
 - Distributed: [[https://spritely.institute/goblins/][Goblins]] actor-framework in the making ([[https://spritely.institute/files/docs/guile-goblins/0.14.0/index.html][docs]]), for P2P;
-- [[https://github.com/opencog/atomspace][OpenCog Atomspace]]: possible backend for the Protoverse with Guile interface; it's a in-RAM generalized hypergraph store and rewriting system;
+- [[https://github.com/opencog/atomspace][OpenCog Atomspace]]: possible backend for the Protoverse with Guile interface,  largely written in Guile and C++; it's a in-RAM generalized hypergraph store and rewriting system;
 - Performance looks well-balanced, and Guile digests allocation-heavy surprisingly well -- even though v3.0.10 has still the old garbage collector;
 - Collab opportunities: GNU and Scheme enthusiasts, academic;
 
@@ -342,7 +342,7 @@ The following assessment is about choosing the primary platform/language for pro
 - Low-level access to the language itself;
 - Collab opportunities: data-, science and simulation folks of all sorts;
 
-/Sentiment: Julia is an interesting choice and checks many boxes -- the ecosystem fits the domain, which is scientific computing and simulation, and Julia is a good fit for CPU-bound workloads. But I'm not convinced because conceptually, deep recursion will play a crucial role in the Protoverse model, which doessn't translate well to how things are done in Julia./
+/Sentiment: Julia is an interesting choice and checks many boxes -- the ecosystem fits the domain, and Julia is a good fit for CPU-bound workloads. But I'm not convinced because conceptually, deep recursion will play a crucial role in the Protoverse model, which doesn't translate well to how things are done in Julia./
 *** OCaml
 
 - Functional language with pervasive pattern matching, elegant and very readable syntax;

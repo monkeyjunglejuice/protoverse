@@ -1,4 +1,4 @@
-# Created 2025-12-03 Wed 15:09
+# Created 2025-12-06 Sat 23:20
 #+options: 
 #+title: Creating an Open-ended Artificial Universe
 #+date: <2023-08-22 Tue>
@@ -36,7 +36,7 @@ My aim is to use an exptreme bottom-up approach to build multi-scale computation
 
 The Protoverse is supposed to be purely abstract, which doesn't mean that it's crazy exotic or totally absurd (well, not yet). You might even find the modest ontology quite boring.
 
-The Protoverse' design may resemble our universe in some aspects, but also deviate strongly in others -- I'm not interested in simulating real world phenomena, but the /integration/ of orthodox concepts, new ideas and even personal intuitions.
+The Protoverse' design may resemble our universe in some aspects, but also deviate strongly in others -- I'm not interested in simulating real world phenomena, but the /integration/ of orthodox concepts, new ideas and personal intuitions.
 ** Core Ideas
 
 #+begin_index
@@ -58,7 +58,7 @@ Please check out the [[file:metaphysics.protoverse.project.org][metaphysics]] fo
 I don't know yet (that's what I consider a fun project). I can imagine some modest applications, and some pretty wild ones too. But I don't care about that right now.
 ** Why are you doing this?
 
-I came to realize that I should do the stuff I'm most curious about. For me, open-ended computational evolution is probably the most interesting problem I can imagine, and I want to explore the ideas and intuitions I'm carrying around for a long time.
+I came to realize that I should do the stuff I'm most curious about. For me, open-ended computational evolution is probably the most interesting problem, and I want to explore the ideas and intuitions I'm carrying around for a long time, and seem to be overlooked by academics & research who are nestled into their confinements of politics, reputation and career perspectives.
 ** Why not an artificial universe based on physics?
 
 The Protoverse project moves beyond physics because it views physical laws, space, time, and matter not as privileged, but as parts of a multi-scale reality. Over-reliance on physics can overshadow the complexity inherent in nature's layers, where novel properties arise through interactions at different Nested Scales of Complexity.
