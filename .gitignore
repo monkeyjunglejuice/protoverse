@@ -1,6 +1,4 @@
-
-.DS_Store
-.aider*
-/tmp/
-/.projectile-cache.eld
-/.vscode/
+vendored/
+*.fasl
+*.fas
+*.DS_Store
